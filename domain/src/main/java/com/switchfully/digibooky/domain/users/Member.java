@@ -15,7 +15,7 @@ public class Member {
         this.userId = UUID.randomUUID().toString();
         this.inss = inss;
         this.firstname = firstname;
-        this.lastname = lastname;
+        this.lastname = lastnameNotNull(lastname);
         this.email = emailVerification(email);
         this.address = address;
     }
@@ -37,6 +37,13 @@ public class Member {
 
     public boolean isEmailFormat(String email) {
         return Pattern.matches("\\b[A-Z0-9._%-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}\\b", email.toUpperCase());
+    }
+
+    public String lastnameNotNull(String lastname){
+        if (lastname == null) {
+            throw new IllegalArgumentException("Please provide a lastname.");
+        }
+        return lastname;
     }
 
     public String getEmail() {

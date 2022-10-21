@@ -10,10 +10,21 @@ public class Address {
         this.streetname = streetname;
         this.streetnumber = streetnumber;
         this.postalcode = postalcode;
-        this.city = city;
+        this.city = cityVerification(city);
     }
 
     public Address(String city) {
         this(null, null, null, city);
+    }
+
+    public String cityVerification(String city){
+        if (city == null) {
+            throw new IllegalArgumentException("Please provide a valid input for city.");
+        }
+        return city;
+    }
+
+    public String getCity() {
+        return city;
     }
 }
