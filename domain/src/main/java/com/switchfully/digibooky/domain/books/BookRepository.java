@@ -1,4 +1,4 @@
-package com.switchfully.digitbooky.domain;
+package com.switchfully.digibooky.domain.books;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

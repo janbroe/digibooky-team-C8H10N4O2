@@ -1,8 +1,8 @@
-package com.switchfully.digitbooky.api;
+package com.switchfully.digibooky.api;
 
 
-import com.switchfully.digitbooky.service.BookService;
-import com.switchfully.digitbooky.service.dto.BookDTO;
+import com.switchfully.digibooky.service.BookService;
+import com.switchfully.digibooky.service.dto.BookDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;

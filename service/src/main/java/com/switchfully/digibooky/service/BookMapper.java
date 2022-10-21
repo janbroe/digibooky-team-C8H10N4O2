@@ -1,7 +1,7 @@
-package com.switchfully.digitbooky.service;
+package com.switchfully.digibooky.service;
 
-import com.switchfully.digitbooky.domain.Book;
-import com.switchfully.digitbooky.service.dto.BookDTO;
+import com.switchfully.digibooky.domain.books.Book;
+import com.switchfully.digibooky.service.dto.BookDTO;
 
 import java.util.Collection;
 import java.util.List;

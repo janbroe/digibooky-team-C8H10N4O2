@@ -1,7 +1,7 @@
-package com.switchfully.digitbooky.service;
+package com.switchfully.digibooky.service;
 
-import com.switchfully.digitbooky.domain.BookRepository;
-import com.switchfully.digitbooky.service.dto.BookDTO;
+import com.switchfully.digibooky.domain.books.BookRepository;
+import com.switchfully.digibooky.service.dto.BookDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

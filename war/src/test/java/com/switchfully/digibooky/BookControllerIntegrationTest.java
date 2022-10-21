@@ -1,10 +1,10 @@
-package com.switchfully.digitbooky;
+package com.switchfully.digibooky;
 
-import com.switchfully.digitbooky.domain.Author;
-import com.switchfully.digitbooky.domain.Book;
-import com.switchfully.digitbooky.domain.BookRepository;
-import com.switchfully.digitbooky.service.BookMapper;
-import com.switchfully.digitbooky.service.dto.BookDTO;
+import com.switchfully.digibooky.domain.books.Author;
+import com.switchfully.digibooky.domain.books.Book;
+import com.switchfully.digibooky.domain.books.BookRepository;
+import com.switchfully.digibooky.service.BookMapper;
+import com.switchfully.digibooky.service.dto.BookDTO;
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

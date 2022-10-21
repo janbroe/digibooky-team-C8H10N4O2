@@ -1,6 +1,4 @@
-package com.switchfully.digitbooky.service.dto;
-
-import com.switchfully.digitbooky.domain.Author;
+package com.switchfully.digibooky.service.dto;
 
 import java.util.Objects;
 
