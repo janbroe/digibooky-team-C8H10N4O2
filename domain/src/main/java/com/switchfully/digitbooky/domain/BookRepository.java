@@ -16,6 +16,10 @@ public class BookRepository {
         this.bookRepository = new HashMap<>();
     }
 
+    public void saveBook(Book book) {
+        bookRepository.put(book.getIsbn(), book);
+    }
+
     public Collection<Book> getAllBooks() {
         log.debug("GET -> Handling request for all books");
         return bookRepository.values();
