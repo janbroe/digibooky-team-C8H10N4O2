@@ -49,4 +49,24 @@ public class Member {
     public String getEmail() {
         return email;
     }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public String getInss() {
+        return inss;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
 }

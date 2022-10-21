@@ -10,6 +10,8 @@ class MemberTest {
     void whenGivenAValidMember_IfDoingValidEmailCheckAndLastNameCheck_GetPositiveResult() {
         Member aMember = new Member("eenINSSNummer", "Jan", "Achternaam", "jan.achternaam@gmail.be", new Address("Parking"));
         assertThat(aMember.getEmail()).isNotNull();
+        assertThat(aMember.getLastname()).isNotNull();
+        assertThat(aMember.getAddress().getCity()).isNotNull();
     }
 
     @Test
