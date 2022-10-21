@@ -23,7 +23,7 @@ public class BookControllerIntegrationTest {
     @LocalServerPort
     private int port;
 
-    private BookMapper bookMapper = new BookMapper();
+    private final BookMapper bookMapper = new BookMapper();
 
     @Autowired
     private BookRepository bookRepository;
