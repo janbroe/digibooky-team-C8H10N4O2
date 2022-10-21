@@ -1,4 +1,4 @@
-package com.switchfully.digibooky.api;
+package com.switchfully.digitbooky;
 
 import com.switchfully.digitbooky.domain.Author;
 import com.switchfully.digitbooky.domain.Book;
@@ -8,6 +8,7 @@ import com.switchfully.digitbooky.service.dto.BookDTO;
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
@@ -23,11 +24,12 @@ public class BookControllerIntegrationTest {
     private int port;
 
     private BookMapper bookMapper = new BookMapper();
+
+    @Autowired
     private BookRepository bookRepository;
 
     @BeforeEach
     void createAndFillBookRepository() {
-        bookRepository = new BookRepository();
         bookRepository.saveBook(new Book("isbn1", "title1", new Author("first1", "last1")));
         bookRepository.saveBook(new Book("isbn2", "title2", new Author("first2", "last2")));
         bookRepository.saveBook(new Book("isbn3", "title3", new Author("first3", "last3")));

@@ -2,6 +2,8 @@ package com.switchfully.digitbooky.service.dto;
 
 import com.switchfully.digitbooky.domain.Author;
 
+import java.util.Objects;
+
 public class BookDTO {
     private String isbn;
     private String title;
@@ -32,5 +34,18 @@ public class BookDTO {
 
     public String getAuthor() {
         return author;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BookDTO bookDTO = (BookDTO) o;
+        return Objects.equals(isbn, bookDTO.isbn);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(isbn);
     }
 }
