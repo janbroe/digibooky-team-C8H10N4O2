@@ -18,7 +18,7 @@ public class MemberService {
     }
 
     public MemberDTO saveMember(CreateMemberDTO createMemberDTO) {
-        Member newMember = new Member(createMemberDTO.getInss(), createMemberDTO.getFirstname(), createMemberDTO.getLastname(),createMemberDTO.getEmail(),createMemberDTO.getAddress());
+        Member newMember = memberMapper.mapCreateDTOTOMember(createMemberDTO);
         memberRepository.saveMember(newMember);
         return memberMapper.mapMemberToDTO(newMember);
     }

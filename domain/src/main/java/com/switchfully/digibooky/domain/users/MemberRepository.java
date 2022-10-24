@@ -2,6 +2,8 @@ package com.switchfully.digibooky.domain.users;
 
 import org.springframework.stereotype.Repository;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,5 +42,9 @@ public class MemberRepository {
             }
         }
         return true;
+    }
+
+    public Collection<Member> getAll() {
+        return memberRepositoryByID.values();
     }
 }
