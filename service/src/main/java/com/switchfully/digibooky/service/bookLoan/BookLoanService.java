@@ -21,4 +21,10 @@ public class BookLoanService {
         bookLoanRepository.lendOutBook(bookLoan);
         return bookLoanMapper.mapToDTO(bookLoan);
     }
+
+    public BookLoanDTO returnBook(String userID, String lendingID) {
+        bookLoanRepository.returnBook(lendingID);
+        //todo
+        return null;
+    }
 }

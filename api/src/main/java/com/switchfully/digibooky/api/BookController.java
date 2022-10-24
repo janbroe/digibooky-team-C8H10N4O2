@@ -45,4 +45,11 @@ public class BookController {
         log.debug("POST -> Controller request to put book loan with userID ".concat(userID).concat(" and isbn ").concat(isbn));
         return bookLoanService.lendBook(userID, isbn);
     }
+
+    @PostMapping(value = "{userID}/{lendingID}/return", produces = MediaType.APPLICATION_JSON_VALUE)
+    public BookLoanDTO returnBook(@PathVariable String userID, @PathVariable String lendingID){
+        log.debug("POST -> Controller request to post book return with userID ".concat(userID).concat(" and lendingID ".concat(lendingID)));
+        return bookLoanService.returnBook(userID, lendingID);
+    }
+
 }

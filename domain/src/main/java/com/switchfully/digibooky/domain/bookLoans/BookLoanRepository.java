@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.NoSuchElementException;
@@ -29,11 +30,11 @@ public class BookLoanRepository {
         this.memberRepository = memberRepository;
     }
 
-    public void lendOutBook(BookLoan bookLoan){
+    public void lendOutBook(BookLoan bookLoan) {
         if (!memberRepository.doesMemberExist(bookLoan.getMemberID())) {
             throw new NoSuchElementException("Member with ID ".concat(bookLoan.getMemberID()).concat(" does not exist"));
         }
-        if (!isBookAvailable(bookLoan.getBookISBN())){
+        if (!isBookAvailable(bookLoan.getBookISBN())) {
             throw new NoSuchElementException("Book with ISBN ".concat(bookLoan.getBookISBN()).concat(" is not available."));
         }
         bookLoansByID.put(bookLoan.getMemberID(), bookLoan);
@@ -45,4 +46,14 @@ public class BookLoanRepository {
         return bookRepository.getBookByISBN(isbn).isAvailable();
     }
 
+    public void returnBook(String lendingID) {
+        if (!bookLoansByID.containsKey(lendingID)) {
+            throw new NoSuchElementException("Book loan with ID ".concat(lendingID).concat(" could not be found"));
+        }
+        BookLoan bookLoan = bookLoansByID.get(lendingID);
+        bookRepository.getBookByISBN(bookLoan.getBookISBN()).setAvailable();
+        if (LocalDate.now().isAfter(bookLoan.getDueDate())) {
+            //todo
+        }
+    }
 }

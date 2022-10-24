@@ -14,14 +14,6 @@ public class Book {
         summary = null;
     }
 
-    public void loanBook(){
-        isAvailable = false;
-    }
-
-    public void bookBackInInventory() {
-        isAvailable = true;
-    }
-
     public String getIsbn() {
         return isbn;
     }
@@ -49,5 +41,9 @@ public class Book {
 
     public void setUnavailable() {
         isAvailable = false;
+    }
+
+    public void setAvailable() {
+        isAvailable = true;
     }
 }
