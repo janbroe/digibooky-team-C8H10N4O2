@@ -5,12 +5,21 @@ public class Book {
     private final String title;
     private final Author author;
     private String summary;
+    private boolean isAvailable = true;
 
     public Book(String isbn, String title, Author author) {
         this.isbn = isbn;
         this.title = title;
         this.author = author;
         summary = null;
+    }
+
+    public void loanBook(){
+        isAvailable = false;
+    }
+
+    public void bookBackInInventory() {
+        isAvailable = true;
     }
 
     public String getIsbn() {
@@ -32,5 +41,9 @@ public class Book {
 
     public void setSummary(String summary) {
         this.summary = summary;
+    }
+
+    public boolean isAvailable() {
+        return isAvailable;
     }
 }
