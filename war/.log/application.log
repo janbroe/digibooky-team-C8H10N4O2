@@ -46,3 +46,15 @@
 2022-10-21 12:01:01.561  INFO 16584 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-10-21 12:01:01.563  INFO 16584 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2022-10-21 12:01:01.565  INFO 16584 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-10-21 16:37:42.817  INFO 7932 --- [main] c.s.d.BookControllerIntegrationTest      : Starting BookControllerIntegrationTest using Java 17 on CI00170246 with PID 7932 (started by stijnsch in C:\_Projects\digibooky-team-C8H10N4O2\war)
+2022-10-21 16:37:42.819  INFO 7932 --- [main] c.s.d.BookControllerIntegrationTest      : No active profile set, falling back to 1 default profile: "default"
+2022-10-21 16:37:44.184  INFO 7932 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-10-21 16:37:44.195  INFO 7932 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-21 16:37:44.196  INFO 7932 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-21 16:37:44.302  INFO 7932 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-21 16:37:44.303  INFO 7932 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1208 ms
+2022-10-21 16:37:45.189  INFO 7932 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 65038 (http) with context path ''
+2022-10-21 16:37:45.200  INFO 7932 --- [main] c.s.d.BookControllerIntegrationTest      : Started BookControllerIntegrationTest in 2.764 seconds (JVM running for 4.136)
+2022-10-21 16:37:46.624  INFO 7932 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-21 16:37:46.624  INFO 7932 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-21 16:37:46.625  INFO 7932 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
