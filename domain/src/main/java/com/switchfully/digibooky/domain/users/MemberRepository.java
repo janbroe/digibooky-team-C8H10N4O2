@@ -21,7 +21,7 @@ public class MemberRepository {
         memberRepositoryByID.put(member3.getUserId(), member3);
         memberRepositoryByID.put(member4.getUserId(), member4);
         memberRepositoryByID.put(member5.getUserId(), member5);
-        System.out.println("member: " + member1.getUserId());
+//        System.out.println("member: " + member1.getUserId());
     }
 
     public void saveMember(Member member){

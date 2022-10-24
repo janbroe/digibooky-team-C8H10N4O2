@@ -53,6 +53,5 @@ class MemberTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("Please provide a valid input for city.");
     }
-
 }
 

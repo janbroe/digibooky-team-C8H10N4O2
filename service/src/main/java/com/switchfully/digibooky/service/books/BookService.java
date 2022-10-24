@@ -24,5 +24,4 @@ public class BookService {
         return bookMapper.mapBookToDTO(bookRepository.getBookByISBN(isbn));
     }
 
-
 }

@@ -37,7 +37,9 @@ public class BookLoanRepository {
         if (!isBookAvailable(bookLoan.getBookISBN())) {
             throw new NoSuchElementException("Book with ISBN ".concat(bookLoan.getBookISBN()).concat(" is not available."));
         }
-        bookLoansByID.put(bookLoan.getMemberID(), bookLoan);
+        //changed to getLoanID because we also search on lendingID for returning a book.
+        //LoanID needs to be the key, not MemberID correct?
+        bookLoansByID.put(bookLoan.getLoanID(), bookLoan);
         bookRepository.getBookByISBN(bookLoan.getBookISBN()).setUnavailable();
         log.info("POST -> ".concat(bookLoan.toString()));
     }
