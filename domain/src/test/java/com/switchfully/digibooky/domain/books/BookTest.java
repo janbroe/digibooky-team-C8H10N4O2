@@ -19,4 +19,14 @@ class BookTest {
         assertThat(testBook.getAuthorsFullName()).isEqualTo(author.getFullName());
     }
 
+
+    @Test
+    void settingSummaryOnBook() {
+        Book book = new Book("isbn", "some title", new Author("first", "last"));
+        String summary = "this is a summary";
+        book.setSummary(summary);
+
+        assertThat(book.getSummary()).isEqualTo("this is a summary");
+    }
+
 }
