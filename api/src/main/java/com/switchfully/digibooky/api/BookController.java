@@ -1,15 +1,12 @@
 package com.switchfully.digibooky.api;
 
 
-import com.switchfully.digibooky.service.BookService;
-import com.switchfully.digibooky.service.dto.BookDTO;
+import com.switchfully.digibooky.service.books.BookService;
+import com.switchfully.digibooky.service.books.dto.BookDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,5 +26,11 @@ public class BookController {
     public List<BookDTO> getAllBooks() {
         log.debug("GET -> Controller request for all books");
         return bookService.getAllBooks();
+    }
+
+    @GetMapping(path = "{isbn}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public BookDTO getBookByISBN(@PathVariable String isbn) {
+        log.debug("GET -> Controller request for book with ISBN ".concat(isbn));
+        return bookService.getBookByISBN(isbn);
     }
 }

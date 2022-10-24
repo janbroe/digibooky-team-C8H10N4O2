@@ -1,7 +1,7 @@
-package com.switchfully.digibooky.service;
+package com.switchfully.digibooky.service.books;
 
 import com.switchfully.digibooky.domain.books.BookRepository;
-import com.switchfully.digibooky.service.dto.BookDTO;
+import com.switchfully.digibooky.service.books.dto.BookDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,5 +18,9 @@ public class BookService {
 
     public List<BookDTO> getAllBooks() {
         return bookMapper.mapBookToDTO(bookRepository.getAllBooks());
+    }
+
+    public BookDTO getBookByISBN(String isbn) {
+        return bookMapper.mapBookToDTO(bookRepository.getBookByISBN(isbn));
     }
 }
