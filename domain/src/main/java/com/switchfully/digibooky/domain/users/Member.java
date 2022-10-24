@@ -46,6 +46,7 @@ public class Member {
         return lastname;
     }
 
+
     public String getEmail() {
         return email;
     }

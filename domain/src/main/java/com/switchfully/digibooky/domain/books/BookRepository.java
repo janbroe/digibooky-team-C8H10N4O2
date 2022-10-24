@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+
 @Repository
 public class BookRepository {
     private final Map<String, Book> bookRepository;
@@ -14,6 +15,10 @@ public class BookRepository {
 
     public BookRepository() {
         this.bookRepository = new HashMap<>();
+        saveBook(new Book("isbn1", "title1", new Author("first1", "last1")));
+        saveBook(new Book("isbn2", "title2", new Author("first2", "last2")));
+        saveBook(new Book("isbn3", "title3", new Author("first3", "last3")));
+        saveBook(new Book("isbn4", "title4", new Author("first4", "last4")));
     }
 
     public void saveBook(Book book) {

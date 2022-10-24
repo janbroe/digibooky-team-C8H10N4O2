@@ -19,4 +19,5 @@ public class BookMapper {
                 .map(this::mapBookToDTO)
                 .toList();
     }
+
 }
