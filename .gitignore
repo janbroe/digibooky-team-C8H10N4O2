@@ -1,5 +1,4 @@
 /.idea
 /.log
-/.assignment
-/target
+*/target
 *.iml
