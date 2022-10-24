@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.NoSuchElementException;
 
 @Repository
 public class BookRepository {
@@ -28,5 +29,13 @@ public class BookRepository {
     public Collection<Book> getAllBooks() {
         log.debug("GET -> Handling request for all books");
         return bookRepository.values();
+    }
+
+    public Book getBookByISBN(String isbn) {
+        log.debug("GET -> Handling request for book with ISBN ".concat(isbn));
+        if (!bookRepository.containsKey(isbn)) {
+            throw new NoSuchElementException("Book with ISBN ".concat(isbn).concat(" was not found"));
+        }
+        return bookRepository.get(isbn);
     }
 }

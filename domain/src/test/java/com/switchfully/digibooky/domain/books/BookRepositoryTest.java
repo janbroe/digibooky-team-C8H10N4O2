@@ -1,5 +1,7 @@
 package com.switchfully.digibooky.domain.books;
 
+import com.switchfully.digibooky.domain.users.Address;
+import com.switchfully.digibooky.domain.users.Member;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -7,8 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.*;
 
 class BookRepositoryTest {
@@ -40,6 +44,20 @@ class BookRepositoryTest {
     @Test
     void getAllBooksReturnsAllBooksFromBookRepository() {
         assertThat(bookRepository.getAllBooks()).containsAll(bookList);
+    }
+
+    @Test
+    void getBookByISBN_GivenValidISBN() {
+        Book expected = bookList.get(0);
+        Book actual = bookRepository.getBookByISBN(expected.getIsbn());
+        assertThat(actual).isEqualTo(expected);
+    }
+
+    @Test
+    void getBookByISBN_GivenInvalidISBN() {
+        assertThatThrownBy(() -> bookRepository.getBookByISBN("notAValidISBN"))
+                .isInstanceOf(NoSuchElementException.class)
+                .hasMessageContaining("Book with ISBN notAValidISBN was not found");
     }
 
     @AfterEach

@@ -1,8 +1,8 @@
-package com.switchfully.digibooky.service;
+package com.switchfully.digibooky.service.users;
 
 import com.switchfully.digibooky.domain.users.Member;
-import com.switchfully.digibooky.service.dto.CreateMemberDTO;
-import com.switchfully.digibooky.service.dto.MemberDTO;
+import com.switchfully.digibooky.service.users.dto.CreateMemberDTO;
+import com.switchfully.digibooky.service.users.dto.MemberDTO;
 
 public class MemberMapper {
 

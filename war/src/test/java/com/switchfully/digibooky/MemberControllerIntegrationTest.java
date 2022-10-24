@@ -1,11 +1,10 @@
 package com.switchfully.digibooky;
 
 import com.switchfully.digibooky.domain.users.Address;
-import com.switchfully.digibooky.domain.users.Member;
 import com.switchfully.digibooky.domain.users.MemberRepository;
-import com.switchfully.digibooky.service.MemberMapper;
-import com.switchfully.digibooky.service.dto.CreateMemberDTO;
-import com.switchfully.digibooky.service.dto.MemberDTO;
+import com.switchfully.digibooky.service.users.MemberMapper;
+import com.switchfully.digibooky.service.users.dto.CreateMemberDTO;
+import com.switchfully.digibooky.service.users.dto.MemberDTO;
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +12,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-
-import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

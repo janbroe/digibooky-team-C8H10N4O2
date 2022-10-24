@@ -1,42 +1,45 @@
-package com.switchfully.digibooky.service.dto;
+package com.switchfully.digibooky.service.users.dto;
 
 import com.switchfully.digibooky.domain.users.Address;
 
-public class MemberDTO {
-    private String userId;
+public class CreateMemberDTO {
+    private String inss;
     private String firstname;
     private String lastname;
     private String email;
     private Address address;
 
-    public MemberDTO setUserId(String userId) {
-        this.userId = userId;
+    public CreateMemberDTO  setInss(String inss) {
+        this.inss = inss;
         return this;
     }
 
-    public MemberDTO setFirstname(String firstname) {
+
+    public CreateMemberDTO  setFirstname(String firstname) {
         this.firstname = firstname;
         return this;
     }
 
-    public MemberDTO setLastname(String lastname) {
+
+    public CreateMemberDTO  setLastname(String lastname) {
         this.lastname = lastname;
         return this;
     }
 
-    public MemberDTO setEmail(String email) {
+
+    public CreateMemberDTO  setEmail(String email) {
         this.email = email;
         return this;
     }
 
-    public MemberDTO setAddress(Address address) {
+
+    public CreateMemberDTO  setAddress(Address address) {
         this.address = address;
         return this;
     }
 
-
-    public String getUserId() {
-        return userId;
+    public String getInss() {
+        return inss;
     }
 
     public String getFirstname() {
@@ -54,4 +57,5 @@ public class MemberDTO {
     public Address getAddress() {
         return address;
     }
+
 }

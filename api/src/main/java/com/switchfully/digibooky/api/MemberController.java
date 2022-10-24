@@ -1,9 +1,8 @@
 package com.switchfully.digibooky.api;
 
-import com.switchfully.digibooky.domain.users.Member;
-import com.switchfully.digibooky.service.MemberService;
-import com.switchfully.digibooky.service.dto.CreateMemberDTO;
-import com.switchfully.digibooky.service.dto.MemberDTO;
+import com.switchfully.digibooky.service.users.MemberService;
+import com.switchfully.digibooky.service.users.dto.CreateMemberDTO;
+import com.switchfully.digibooky.service.users.dto.MemberDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

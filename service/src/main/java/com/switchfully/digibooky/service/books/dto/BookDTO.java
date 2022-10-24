@@ -1,4 +1,4 @@
-package com.switchfully.digibooky.service.dto;
+package com.switchfully.digibooky.service.books.dto;
 
 import java.util.Objects;
 
@@ -6,6 +6,7 @@ public class BookDTO {
     private String isbn;
     private String title;
     private String author;
+    private String summary;
 
     public BookDTO setIsbn(String isbn) {
         this.isbn = isbn;
@@ -22,6 +23,11 @@ public class BookDTO {
         return this;
     }
 
+    public BookDTO setSummary(String summary) {
+        this.summary = summary;
+        return this;
+    }
+
     public String getIsbn() {
         return isbn;
     }
@@ -32,6 +38,10 @@ public class BookDTO {
 
     public String getAuthor() {
         return author;
+    }
+
+    public String getSummary() {
+        return summary;
     }
 
     @Override
