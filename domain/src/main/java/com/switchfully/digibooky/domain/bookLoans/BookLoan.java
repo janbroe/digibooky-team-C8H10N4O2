@@ -27,4 +27,27 @@ public class BookLoan {
     public String getBookISBN() {
         return bookISBN;
     }
+
+    public LocalDate getLoanDate() {
+        return loanDate;
+    }
+
+    public LocalDate getDueDate() {
+        return dueDate;
+    }
+
+    public String getLoanID() {
+        return loanID;
+    }
+
+    @Override
+    public String toString() {
+        return "BookLoan{" +
+                "memberID='" + memberID + '\'' +
+                ", bookISBN='" + bookISBN + '\'' +
+                ", loanDate=" + loanDate +
+                ", dueDate=" + dueDate +
+                ", loanID='" + loanID + '\'' +
+                '}';
+    }
 }

@@ -46,4 +46,8 @@ public class Book {
     public boolean isAvailable() {
         return isAvailable;
     }
+
+    public void setUnavailable() {
+        isAvailable = false;
+    }
 }
