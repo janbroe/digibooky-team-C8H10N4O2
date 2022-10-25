@@ -30,30 +30,31 @@ public class BookLoanRepository {
         this.memberRepository = memberRepository;
     }
 
-    public void lendOutBook(BookLoan bookLoan) {
-        if (!memberRepository.doesMemberExist(bookLoan.getMemberID())) {
-            throw new NoSuchElementException("Member with ID ".concat(bookLoan.getMemberID()).concat(" does not exist"));
+    public void lendOutBook(BookLoanOut bookLoanOut) {
+        if (!memberRepository.doesMemberExist(bookLoanOut.getMemberID())) {
+            throw new NoSuchElementException("Member with ID ".concat(bookLoanOut.getMemberID()).concat(" does not exist"));
         }
-        if (!isBookAvailable(bookLoan.getBookISBN())) {
-            throw new NoSuchElementException("Book with ISBN ".concat(bookLoan.getBookISBN()).concat(" is not available."));
+        if (!isBookAvailable(bookLoanOut.getBookISBN())) {
+            throw new NoSuchElementException("Book with ISBN ".concat(bookLoanOut.getBookISBN()).concat(" is not available."));
         }
-        bookLoansByID.put(bookLoan.getLoanID(), bookLoan);
-        bookRepository.getBookByISBN(bookLoan.getBookISBN()).setUnavailable();
-        log.info("POST -> ".concat(bookLoan.toString()));
+        bookLoansByID.put(bookLoanOut.getLoanID(), bookLoanOut);
+        bookRepository.getBookByISBN(bookLoanOut.getBookISBN()).setUnavailable();
+        log.info("POST -> ".concat(bookLoanOut.toString()));
     }
 
     public boolean isBookAvailable(String isbn) {
         return bookRepository.getBookByISBN(isbn).isAvailable();
     }
 
-    public void returnBook(String lendingID) {
-        if (!bookLoansByID.containsKey(lendingID)) {
-            throw new NoSuchElementException("Book loan with ID ".concat(lendingID).concat(" could not be found"));
+    public BookLoanOut getBookLoanOutByLoanID(String loanID) {
+        if (!bookLoansByID.containsKey(loanID)) {
+            throw new NoSuchElementException("Book loan with ID ".concat(loanID).concat(" could not be found"));
         }
-        BookLoan bookLoan = bookLoansByID.get(lendingID);
-        bookRepository.getBookByISBN(bookLoan.getBookISBN()).setAvailable();
-        if (LocalDate.now().isAfter(bookLoan.getDueDate())) {
-            //todo
-        }
+        return (BookLoanOut) bookLoansByID.get(loanID);
+    }
+
+    public void returnBook(BookLoanIn bookLoanIn) {
+        bookLoansByID.put(bookLoanIn.getLoanID(), bookLoanIn);
+        bookRepository.getBookByISBN(bookLoanIn.getBookISBN()).setAvailable();
     }
 }

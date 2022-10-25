@@ -1,8 +1,10 @@
 package com.switchfully.digibooky.service.bookLoan;
 
-import com.switchfully.digibooky.domain.bookLoans.BookLoan;
+import com.switchfully.digibooky.domain.bookLoans.BookLoanIn;
+import com.switchfully.digibooky.domain.bookLoans.BookLoanOut;
 import com.switchfully.digibooky.domain.bookLoans.BookLoanRepository;
-import com.switchfully.digibooky.service.bookLoan.dto.BookLoanDTO;
+import com.switchfully.digibooky.service.bookLoan.dto.BookLoanInDTO;
+import com.switchfully.digibooky.service.bookLoan.dto.BookLoanOutDTO;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -16,15 +18,17 @@ public class BookLoanService {
         bookLoanMapper = new BookLoanMapper();
     }
 
-    public BookLoanDTO lendBook(String userID, String isbn) {
-        BookLoan bookLoan = new BookLoan(userID, isbn);
-        bookLoanRepository.lendOutBook(bookLoan);
-        return bookLoanMapper.mapToDTO(bookLoan);
+    public BookLoanOutDTO lendBook(String userID, String isbn) {
+        BookLoanOut bookLoanOut = new BookLoanOut(userID, isbn);
+        bookLoanRepository.lendOutBook(bookLoanOut);
+        return bookLoanMapper.mapBookLoanOutToDTO(bookLoanOut);
     }
 
-    public BookLoanDTO returnBook(String userID, String lendingID) {
-        bookLoanRepository.returnBook(lendingID);
-        //todo
-        return null;
+    public BookLoanInDTO returnBook(String loanID) {
+        BookLoanOut bookLoanOut = bookLoanRepository.getBookLoanOutByLoanID(loanID);
+        BookLoanIn bookLoanIn = bookLoanMapper.mapBookLoanOutToBookLoanIn(bookLoanOut);
+        bookLoanIn.checkBookLate(bookLoanOut.getDueDate());
+        bookLoanRepository.returnBook(bookLoanIn);
+        return bookLoanMapper.mapBookLoanInToDTO(bookLoanIn);
     }
 }

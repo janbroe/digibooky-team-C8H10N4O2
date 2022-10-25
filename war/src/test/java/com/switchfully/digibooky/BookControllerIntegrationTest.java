@@ -6,10 +6,9 @@ import com.switchfully.digibooky.domain.books.BookRepository;
 import com.switchfully.digibooky.domain.users.Address;
 import com.switchfully.digibooky.domain.users.Member;
 import com.switchfully.digibooky.domain.users.MemberRepository;
-import com.switchfully.digibooky.service.bookLoan.dto.BookLoanDTO;
+import com.switchfully.digibooky.service.bookLoan.dto.BookLoanOutDTO;
 import com.switchfully.digibooky.service.books.BookMapper;
 import com.switchfully.digibooky.service.books.dto.BookDTO;
-import com.switchfully.digibooky.service.users.dto.MemberDTO;
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -17,11 +16,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -116,7 +112,7 @@ public class BookControllerIntegrationTest {
 
         Book givenBook = bookRepository.getBookByISBN("isbn4");
 
-        BookLoanDTO result = RestAssured
+        BookLoanOutDTO result = RestAssured
                 .given()
                 .baseUri("http://localhost")
                 .port(port)
@@ -126,6 +122,6 @@ public class BookControllerIntegrationTest {
                 .assertThat()
                 .statusCode(HttpStatus.CREATED.value())
                 .extract()
-                .as(BookLoanDTO.class);
+                .as(BookLoanOutDTO.class);
     }
 }

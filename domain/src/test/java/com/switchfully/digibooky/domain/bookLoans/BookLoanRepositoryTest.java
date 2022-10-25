@@ -7,13 +7,11 @@ import com.switchfully.digibooky.domain.users.Address;
 import com.switchfully.digibooky.domain.users.Member;
 import com.switchfully.digibooky.domain.users.MemberRepository;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.NoSuchElementException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
-import static org.junit.jupiter.api.Assertions.*;
 
 class BookLoanRepositoryTest {
 
@@ -35,7 +33,7 @@ class BookLoanRepositoryTest {
         //Only thing that can be tested now since we can't get a list of all the lend books yet.
         assertThat(bookRepository.getBookByISBN(lendBook.getIsbn()).isAvailable()).isTrue();
 
-        bookLoanRepository.lendOutBook(new BookLoan(lendMember.getUserId(), lendBook.getIsbn()));
+        bookLoanRepository.lendOutBook(new BookLoanOut(lendMember.getUserId(), lendBook.getIsbn()));
 
         assertThat(bookRepository.getBookByISBN(lendBook.getIsbn()).isAvailable()).isFalse();
 
@@ -52,7 +50,7 @@ class BookLoanRepositoryTest {
 
         BookLoanRepository bookLoanRepository = new BookLoanRepository(bookRepository, memberRepository);
 
-        BookLoan givenBookLoan = new BookLoan("WrongMemberID", lendBook.getIsbn());
+        BookLoanOut givenBookLoan = new BookLoanOut("WrongMemberID", lendBook.getIsbn());
 
         assertThatThrownBy(() -> bookLoanRepository.lendOutBook(givenBookLoan))
                 .isInstanceOf(NoSuchElementException.class)
@@ -73,7 +71,7 @@ class BookLoanRepositoryTest {
 
         BookLoanRepository bookLoanRepository = new BookLoanRepository(bookRepository, memberRepository);
 
-        BookLoan givenBookLoan = new BookLoan(lendMember.getUserId(), lendBook.getIsbn());
+        BookLoanOut givenBookLoan = new BookLoanOut(lendMember.getUserId(), lendBook.getIsbn());
 
         //lend book so that it is not available anymore
         bookLoanRepository.lendOutBook(givenBookLoan);
@@ -96,14 +94,15 @@ class BookLoanRepositoryTest {
 
         BookLoanRepository bookLoanRepository = new BookLoanRepository(bookRepository, memberRepository);
 
-        BookLoan givenBookLoan = new BookLoan(lendMember.getUserId(), lendBook.getIsbn());
+        BookLoanOut givenBookLoanOut = new BookLoanOut(lendMember.getUserId(), lendBook.getIsbn());
+        BookLoanIn givenBookLoanIn = new BookLoanIn(givenBookLoanOut.getMemberID(), givenBookLoanOut.getBookISBN());
 
-        bookLoanRepository.lendOutBook(givenBookLoan);
+        bookLoanRepository.lendOutBook(givenBookLoanOut);
 
         //Check that book is not available anymore
         assertThat(bookRepository.getBookByISBN(lendBook.getIsbn()).isAvailable()).isFalse();
         //return book
-        bookLoanRepository.returnBook(givenBookLoan.getLoanID());
+        bookLoanRepository.returnBook(givenBookLoanIn);
         //Check that book is back available
         assertThat(bookRepository.getBookByISBN(lendBook.getIsbn()).isAvailable()).isTrue();
 
@@ -118,7 +117,8 @@ class BookLoanRepositoryTest {
 
         BookLoanRepository bookLoanRepository = new BookLoanRepository(bookRepository, memberRepository);
 
-        assertThatThrownBy(() -> bookLoanRepository.returnBook("NonExistingLendingID"))
+
+        assertThatThrownBy(() -> bookLoanRepository.getBookLoanOutByLoanID("NonExistingLendingID"))
                 .isInstanceOf(NoSuchElementException.class)
                 .hasMessage("Book loan with ID NonExistingLendingID could not be found");
 

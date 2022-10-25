@@ -9,6 +9,7 @@ public class MemberMapper {
 
     public MemberDTO mapMemberToDTO(Member member) {
         return new MemberDTO()
+                .setUserId(member.getUserId())
                 .setFirstname(member.getFirstname())
                 .setLastname(member.getLastname())
                 .setEmail(member.getEmail())

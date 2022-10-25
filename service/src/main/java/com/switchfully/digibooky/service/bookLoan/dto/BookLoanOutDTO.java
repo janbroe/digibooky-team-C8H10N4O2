@@ -2,30 +2,30 @@ package com.switchfully.digibooky.service.bookLoan.dto;
 
 import java.time.LocalDate;
 
-public class BookLoanDTO {
+public class BookLoanOutDTO {
     private String loanID;
     private String memberID;
     private String bookISBN;
     private LocalDate loanDate;
     private LocalDate dueDate;
 
-    public BookLoanDTO setLoanID(String loanID) {
+    public BookLoanOutDTO setLoanID(String loanID) {
         this.loanID = loanID;
         return this;
     }
-    public BookLoanDTO setMemberID(String memberID) {
+    public BookLoanOutDTO setMemberID(String memberID) {
         this.memberID = memberID;
         return this;
     }
-    public BookLoanDTO setBookISBN(String bookISBN) {
+    public BookLoanOutDTO setBookISBN(String bookISBN) {
         this.bookISBN = bookISBN;
         return this;
     }
-    public BookLoanDTO setLoanDate(LocalDate loanDate) {
+    public BookLoanOutDTO setLoanDate(LocalDate loanDate) {
         this.loanDate = loanDate;
         return this;
     }
-    public BookLoanDTO setDueDate(LocalDate dueDate) {
+    public BookLoanOutDTO setDueDate(LocalDate dueDate) {
         this.dueDate = dueDate;
         return this;
     }

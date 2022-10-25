@@ -34,7 +34,6 @@ public class MemberDTO {
         return this;
     }
 
-
     public String getUserId() {
         return userId;
     }

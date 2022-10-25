@@ -86,4 +86,12 @@ public class Member {
     public boolean canHaveAccessTo(Feature feature) {
         return role.containsFeature(feature);
     }
+
+    @Override
+    public String toString() {
+        return "Member{" +
+                "userId='" + userId + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }

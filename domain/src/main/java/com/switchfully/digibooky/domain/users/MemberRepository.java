@@ -1,5 +1,7 @@
 package com.switchfully.digibooky.domain.users;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
@@ -7,6 +9,7 @@ import java.util.*;
 @Repository
 public class MemberRepository {
 
+    private final Logger log = LoggerFactory.getLogger(MemberRepository.class);
     private final Map<String, Member> memberRepositoryByID;
 
     public MemberRepository() {
@@ -31,6 +34,7 @@ public class MemberRepository {
             throw new IllegalArgumentException("This INSS is already in use.");
         }
         memberRepositoryByID.put(member.getUserId(), member);
+        log.info("POST -> ".concat(member.toString()));
     }
 
     public boolean isEmailOfMemberUnique(String email) {

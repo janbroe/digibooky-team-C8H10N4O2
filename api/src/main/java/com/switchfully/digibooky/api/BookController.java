@@ -2,7 +2,8 @@ package com.switchfully.digibooky.api;
 
 
 import com.switchfully.digibooky.service.bookLoan.BookLoanService;
-import com.switchfully.digibooky.service.bookLoan.dto.BookLoanDTO;
+import com.switchfully.digibooky.service.bookLoan.dto.BookLoanInDTO;
+import com.switchfully.digibooky.service.bookLoan.dto.BookLoanOutDTO;
 import com.switchfully.digibooky.service.books.BookService;
 import com.switchfully.digibooky.service.books.dto.BookDTO;
 import org.slf4j.Logger;
@@ -41,15 +42,16 @@ public class BookController {
 
     @PostMapping(value = "{userID}/{isbn}/lend", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public BookLoanDTO lendBook(@PathVariable String userID, @PathVariable String isbn) {
+    public BookLoanOutDTO lendBook(@PathVariable String userID, @PathVariable String isbn) {
         log.debug("POST -> Controller request to put book loan with userID ".concat(userID).concat(" and isbn ").concat(isbn));
         return bookLoanService.lendBook(userID, isbn);
     }
 
-    @PostMapping(value = "{userID}/{lendingID}/return", produces = MediaType.APPLICATION_JSON_VALUE)
-    public BookLoanDTO returnBook(@PathVariable String userID, @PathVariable String lendingID){
-        log.debug("POST -> Controller request to post book return with userID ".concat(userID).concat(" and lendingID ".concat(lendingID)));
-        return bookLoanService.returnBook(userID, lendingID);
+    @PostMapping(value = "{loanID}/return", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.CREATED)
+    public BookLoanInDTO returnBook(@PathVariable String loanID){
+        log.debug("POST -> Controller request to post book return with lendingID ".concat(loanID));
+        return bookLoanService.returnBook(loanID);
     }
 
 }
