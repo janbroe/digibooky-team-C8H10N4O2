@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin
 @RequestMapping(path = "/books")
+@CrossOrigin
 public class BookController {
 
     private final Logger log = LoggerFactory.getLogger(BookController.class);

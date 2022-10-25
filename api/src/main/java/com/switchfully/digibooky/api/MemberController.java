@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/members")
+@CrossOrigin
 public class MemberController {
 
     private final Logger log = LoggerFactory.getLogger(MemberController.class);
