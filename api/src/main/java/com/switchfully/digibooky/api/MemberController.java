@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -28,4 +29,6 @@ public class MemberController {
         log.debug("POST -> Controller post a new member");
         return memberService.saveMember(createMemberDTO);
     }
+
+
 }

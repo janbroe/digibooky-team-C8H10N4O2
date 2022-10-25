@@ -13,6 +13,7 @@ public class Member {
     private final String email;
     private final Address address;
     private final String password;
+    private final Role role;
 
     public Member(String inss, String firstname, String lastname,String password, String email, Address address) {
         this.userId = UUID.randomUUID().toString();
@@ -22,6 +23,7 @@ public class Member {
         this.password = new PasswordHasher(password).getHashedPassword();
         this.email = emailVerification(email);
         this.address = address;
+        this.role = Role.MEMBER;
     }
 
     public Member(String inss, String lastname, String password, String email, Address address) {
@@ -29,7 +31,6 @@ public class Member {
     }
 
     public String emailVerification(String emailToVerify) {
-        //todo
         if (emailToVerify == null) {
             throw new IllegalArgumentException("No email address was given.");
         }
@@ -48,6 +49,10 @@ public class Member {
             throw new IllegalArgumentException("Please provide a lastname.");
         }
         return lastname;
+    }
+
+    public boolean doesPasswordMatch(String passwordToMatch) {
+        return password.equals(new PasswordHasher(passwordToMatch).getHashedPassword());
     }
 
     public String getPassword() {
@@ -76,5 +81,9 @@ public class Member {
 
     public String getFirstname() {
         return firstname;
+    }
+
+    public boolean canHaveAccessTo(Feature feature) {
+        return role.containsFeature(feature);
     }
 }

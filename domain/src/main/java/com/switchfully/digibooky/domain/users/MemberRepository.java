@@ -58,4 +58,13 @@ public class MemberRepository {
     public Collection<Member> getAll() {
         return memberRepositoryByID.values();
     }
+
+    public Member getMemberByEmail(String emailAsUsername) {
+        for (Member member : memberRepositoryByID.values()) {
+            if (member.getEmail().equals(emailAsUsername)) {
+                return member;
+            }
+        }
+        throw new NoSuchElementException("Username ".concat(emailAsUsername).concat("  was not found"));
+    }
 }

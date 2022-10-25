@@ -5,7 +5,7 @@ import java.security.NoSuchAlgorithmException;
 
 public class PasswordHasher {
 
-    private String passwordToHash;
+    private final String passwordToHash;
     private String hashedPassword;
 
     public PasswordHasher(String passwordToHash) {
