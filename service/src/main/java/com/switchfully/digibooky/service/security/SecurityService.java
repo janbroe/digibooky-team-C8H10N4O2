@@ -15,8 +15,7 @@ import java.util.NoSuchElementException;
 @Service
 public class SecurityService {
     private final Logger log = LoggerFactory.getLogger(SecurityService.class);
-
-    private MemberRepository memberRepository;
+    private final MemberRepository memberRepository;
 
     public SecurityService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;

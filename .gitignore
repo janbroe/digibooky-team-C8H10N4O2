@@ -1,4 +1,5 @@
 /.idea
 /.log
+/war/.log
 */target
 *.iml
