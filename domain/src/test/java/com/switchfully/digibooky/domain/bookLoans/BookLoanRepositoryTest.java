@@ -36,7 +36,6 @@ class BookLoanRepositoryTest {
         bookLoanRepository.lendOutBook(new BookLoanOut(lendMember.getUserId(), lendBook.getIsbn()));
 
         assertThat(bookRepository.getBookByISBN(lendBook.getIsbn()).isAvailable()).isFalse();
-
     }
 
     @Test
@@ -123,4 +122,5 @@ class BookLoanRepositoryTest {
                 .hasMessage("Book loan with ID NonExistingLendingID could not be found");
 
     }
+
 }

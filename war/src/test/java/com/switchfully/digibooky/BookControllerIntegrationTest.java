@@ -1,11 +1,15 @@
 package com.switchfully.digibooky;
 
+import com.switchfully.digibooky.domain.bookLoans.BookLoanOut;
+import com.switchfully.digibooky.domain.bookLoans.BookLoanRepository;
 import com.switchfully.digibooky.domain.books.Author;
 import com.switchfully.digibooky.domain.books.Book;
 import com.switchfully.digibooky.domain.books.BookRepository;
 import com.switchfully.digibooky.domain.users.Address;
 import com.switchfully.digibooky.domain.users.Member;
 import com.switchfully.digibooky.domain.users.MemberRepository;
+import com.switchfully.digibooky.service.bookLoan.BookLoanMapper;
+import com.switchfully.digibooky.service.bookLoan.dto.BookLoanInDTO;
 import com.switchfully.digibooky.service.bookLoan.dto.BookLoanOutDTO;
 import com.switchfully.digibooky.service.books.BookMapper;
 import com.switchfully.digibooky.service.books.dto.BookDTO;
@@ -17,6 +21,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -37,6 +42,9 @@ public class BookControllerIntegrationTest {
 
     @Autowired
     private MemberRepository memberRepository;
+
+    @Autowired
+    BookLoanRepository bookLoanRepository;
 
     @BeforeEach
     void createAndFillBookRepository() {
@@ -105,8 +113,7 @@ public class BookControllerIntegrationTest {
     }
 
     @Test
-    void givenValidMember_whenCreateMember_thenGetHttpStatusCreated() {
-        //TODO only checks if the httpStatus Created is returned, check BookLoanDTO to be added
+    void givenValidMember_createBookLoan_returnBookLoanOutDTO() {
         Member givenMember = new Member("inss5", "first5", "password", "tes5@test.be", new Address("city5"));
         memberRepository.saveMember(givenMember);
 
@@ -123,5 +130,44 @@ public class BookControllerIntegrationTest {
                 .statusCode(HttpStatus.CREATED.value())
                 .extract()
                 .as(BookLoanOutDTO.class);
+
+        assertThat(result).isNotNull();
+        assertThat(result.getLoanID()).isNotNull();
+        assertThat(result.getMemberID()).isEqualTo(givenMember.getUserId());
+        assertThat(result.getBookISBN()).isEqualTo(givenBook.getIsbn());
+        assertThat(result.getLoanDate()).isEqualTo(LocalDate.now());
+        assertThat(result.getDueDate()).isEqualTo(LocalDate.now().plusDays(21));
+    }
+
+
+    @Test
+    void givenValidBookLoanID_whenReturningBook_returnBookLoanInDTO() {
+        Member givenMember = new Member("inss5", "first5", "password", "tes5@test.be", new Address("city5"));
+        memberRepository.saveMember(givenMember);
+
+        Book givenBook = bookRepository.getBookByISBN("isbn4");
+
+        BookLoanOut bookLoanOut = new BookLoanOut(givenMember.getUserId(), givenBook.getIsbn());
+        bookLoanRepository.lendOutBook(bookLoanOut);
+
+        BookLoanInDTO result = RestAssured
+                .given()
+                .baseUri("http://localhost")
+                .port(port)
+                .when()
+                .post("/books/" + bookLoanOut.getLoanID() + "/return")
+                .then()
+                .assertThat()
+                .statusCode(HttpStatus.CREATED.value())
+                .extract()
+                .as(BookLoanInDTO.class);
+
+        assertThat(result).isNotNull();
+        assertThat(result.getLoanID()).isNotNull();
+        assertThat(result.getMemberID()).isEqualTo(givenMember.getUserId());
+        assertThat(result.getBookISBN()).isEqualTo(givenBook.getIsbn());
+        assertThat(result.getReturnDate()).isEqualTo(LocalDate.now());
+        assertThat(result.getMessage()).isEqualTo("Thank you for being a responsible adult");
+        assertThat(result.getFee()).isEqualTo(0.0);
     }
 }
