@@ -38,7 +38,7 @@ public class BookLoanRepository {
             throw new NoSuchElementException("Book with ISBN ".concat(bookLoan.getBookISBN()).concat(" is not available."));
         }
         //changed to getLoanID because we also search on lendingID for returning a book.
-        //LoanID needs to be the key, not MemberID correct?
+        //LoanID needs to be the key, not MemberID correct? (StS->I believe so too.)
         bookLoansByID.put(bookLoan.getLoanID(), bookLoan);
         bookRepository.getBookByISBN(bookLoan.getBookISBN()).setUnavailable();
         log.info("POST -> ".concat(bookLoan.toString()));

@@ -6,6 +6,7 @@ public class CreateMemberDTO {
     private String inss;
     private String firstname;
     private String lastname;
+    private String password;
     private String email;
     private Address address;
 
@@ -26,6 +27,10 @@ public class CreateMemberDTO {
         return this;
     }
 
+    public CreateMemberDTO setPassword(String password) {
+        this.password = password;
+        return this;
+    }
 
     public CreateMemberDTO  setEmail(String email) {
         this.email = email;
@@ -48,6 +53,10 @@ public class CreateMemberDTO {
 
     public String getLastname() {
         return lastname;
+    }
+
+    public String getPassword() {
+        return password;
     }
 
     public String getEmail() {

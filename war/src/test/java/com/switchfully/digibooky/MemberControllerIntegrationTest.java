@@ -32,6 +32,7 @@ class MemberControllerIntegrationTest {
                 .setInss("testInss")
                 .setFirstname("testFirstName")
                 .setLastname("testLastName")
+                .setPassword("password")
                 .setEmail("test@test.test")
                 .setAddress(new Address("testCity"));
 

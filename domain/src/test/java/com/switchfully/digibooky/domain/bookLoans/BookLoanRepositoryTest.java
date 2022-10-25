@@ -27,7 +27,7 @@ class BookLoanRepositoryTest {
         bookRepository.saveBook(lendBook);
 
         MemberRepository memberRepository = new MemberRepository();
-        Member lendMember = new Member("inss6", "first6", "tes6@test.be", new Address("city6"));
+        Member lendMember = new Member("inss6", "first6", "password", "tes6@test.be", new Address("city6"));
         memberRepository.saveMember(lendMember);
 
         BookLoanRepository bookLoanRepository = new BookLoanRepository(bookRepository, memberRepository);
@@ -68,7 +68,7 @@ class BookLoanRepositoryTest {
         bookRepository.saveBook(lendBook);
 
         MemberRepository memberRepository = new MemberRepository();
-        Member lendMember = new Member("inss6", "first6", "tes6@test.be", new Address("city6"));
+        Member lendMember = new Member("inss6", "first6", "password", "tes6@test.be", new Address("city6"));
         memberRepository.saveMember(lendMember);
 
         BookLoanRepository bookLoanRepository = new BookLoanRepository(bookRepository, memberRepository);
@@ -91,7 +91,7 @@ class BookLoanRepositoryTest {
         bookRepository.saveBook(lendBook);
 
         MemberRepository memberRepository = new MemberRepository();
-        Member lendMember = new Member("inss6", "first6", "tes6@test.be", new Address("city6"));
+        Member lendMember = new Member("inss6", "first6", "password", "tes6@test.be", new Address("city6"));
         memberRepository.saveMember(lendMember);
 
         BookLoanRepository bookLoanRepository = new BookLoanRepository(bookRepository, memberRepository);

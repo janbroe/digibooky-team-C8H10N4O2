@@ -6,6 +6,7 @@ import com.switchfully.digibooky.service.users.dto.MemberDTO;
 
 public class MemberMapper {
 
+
     public MemberDTO mapMemberToDTO(Member member) {
         return new MemberDTO()
                 .setFirstname(member.getFirstname())
@@ -15,7 +16,7 @@ public class MemberMapper {
     }
 
     public Member mapCreateDTOTOMember(CreateMemberDTO createMemberDTO) {
-        return new Member(createMemberDTO.getInss(), createMemberDTO.getFirstname(), createMemberDTO.getLastname(),createMemberDTO.getEmail(),createMemberDTO.getAddress());
+        return new Member(createMemberDTO.getInss(), createMemberDTO.getFirstname(), createMemberDTO.getLastname(), createMemberDTO.getPassword(), createMemberDTO.getEmail(),createMemberDTO.getAddress());
     }
 
 }

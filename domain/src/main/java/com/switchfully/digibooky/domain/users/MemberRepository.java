@@ -11,11 +11,11 @@ public class MemberRepository {
 
     public MemberRepository() {
         this.memberRepositoryByID = new HashMap<>();
-        Member member1 = new Member("inss1", "first1", "test@test.be", new Address("city1"));
-        Member member2 = new Member("inss2", "first2", "tes2@test.be", new Address("city2"));
-        Member member3 = new Member("inss3", "first3", "tes3@test.be", new Address("city3"));
-        Member member4 = new Member("inss4", "first4", "tes4@test.be", new Address("city4"));
-        Member member5 = new Member("inss5", "first5", "tes5@test.be", new Address("city5"));
+        Member member1 = new Member("inss1", "first1", "password", "test@test.be", new Address("city1"));
+        Member member2 = new Member("inss2", "first2", "password", "tes2@test.be", new Address("city2"));
+        Member member3 = new Member("inss3", "first3", "password", "tes3@test.be", new Address("city3"));
+        Member member4 = new Member("inss4", "first4", "password", "tes4@test.be", new Address("city4"));
+        Member member5 = new Member("inss5", "first5", "password", "tes5@test.be", new Address("city5"));
         memberRepositoryByID.put(member1.getUserId(), member1);
         memberRepositoryByID.put(member2.getUserId(), member2);
         memberRepositoryByID.put(member3.getUserId(), member3);
@@ -24,7 +24,7 @@ public class MemberRepository {
 //        System.out.println("member: " + member1.getUserId());
     }
 
-    public void saveMember(Member member){
+    public void saveMember(Member member) {
         if (!isEmailOfMemberUnique(member.getEmail())) {
             throw new IllegalArgumentException("Email address already exists");
         }

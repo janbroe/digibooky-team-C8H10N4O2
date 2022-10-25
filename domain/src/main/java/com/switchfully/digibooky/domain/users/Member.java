@@ -1,5 +1,7 @@
 package com.switchfully.digibooky.domain.users;
 
+import com.switchfully.digibooky.domain.PasswordHasher;
+
 import java.util.UUID;
 import java.util.regex.Pattern;
 
@@ -10,18 +12,20 @@ public class Member {
     private final String lastname;
     private final String email;
     private final Address address;
+    private final String password;
 
-    public Member(String inss, String firstname, String lastname, String email, Address address) {
+    public Member(String inss, String firstname, String lastname,String password, String email, Address address) {
         this.userId = UUID.randomUUID().toString();
         this.inss = inss;
         this.firstname = firstname;
         this.lastname = lastnameNotNull(lastname);
+        this.password = new PasswordHasher(password).getHashedPassword();
         this.email = emailVerification(email);
         this.address = address;
     }
 
-    public Member(String inss, String lastname, String email, Address address) {
-        this(inss, null, lastname, email, address);
+    public Member(String inss, String lastname, String password, String email, Address address) {
+        this(inss, null, lastname, password, email, address);
     }
 
     public String emailVerification(String emailToVerify) {
@@ -46,6 +50,9 @@ public class Member {
         return lastname;
     }
 
+    public String getPassword() {
+        return password;
+    }
 
     public String getEmail() {
         return email;

@@ -11,7 +11,7 @@ class MemberRepositoryTest {
     @Test
     void givenAValidMember_whenSaveMemberToRepository_thenAllMembersMustContainGivenMember() {
         MemberRepository memberRepository = new MemberRepository();
-        Member givenMember = new Member("newINSS", "lastName", "email@mail.com", new Address("Brussels"));
+        Member givenMember = new Member("newINSS", "lastName", "password", "email@mail.com", new Address("Brussels"));
         memberRepository.saveMember(givenMember);
         assertThat(memberRepository.getAll()).isNotNull();
         assertThat(memberRepository.getAll()).isNotEmpty();
@@ -21,8 +21,8 @@ class MemberRepositoryTest {
     @Test
     void givenTwoMembersWithSameEmail_whenSaveMemberToRepository_thenIllegalArgumentExceptionExpected() {
         MemberRepository memberRepository = new MemberRepository();
-        Member givenMember = new Member("newINSS", "lastName", "email@mail.com", new Address("Brussels"));
-        Member givenMember2 = new Member("newINSS2", "lastName2", "email@mail.com", new Address("Brussels2"));
+        Member givenMember = new Member("newINSS", "lastName", "password", "email@mail.com", new Address("Brussels"));
+        Member givenMember2 = new Member("newINSS2", "lastName2", "password", "email@mail.com", new Address("Brussels2"));
         memberRepository.saveMember(givenMember);
         assertThatThrownBy(() -> memberRepository.saveMember(givenMember2))
                 .isInstanceOf(IllegalArgumentException.class)
@@ -32,8 +32,8 @@ class MemberRepositoryTest {
     @Test
     void givenTwoMembersWithSameInss_whenSaveMemberToRepository_thenIllegalArgumentExceptionExpected() {
         MemberRepository memberRepository = new MemberRepository();
-        Member givenMember = new Member("newINSS", "lastName", "email@mail.com", new Address("Brussels"));
-        Member givenMember2 = new Member("newINSS", "lastName2", "email2@mail.com", new Address("Brussels2"));
+        Member givenMember = new Member("newINSS", "lastName", "password", "email@mail.com", new Address("Brussels"));
+        Member givenMember2 = new Member("newINSS", "lastName2", "password", "email2@mail.com", new Address("Brussels2"));
         memberRepository.saveMember(givenMember);
         assertThatThrownBy(() -> memberRepository.saveMember(givenMember2))
                 .isInstanceOf(IllegalArgumentException.class)
