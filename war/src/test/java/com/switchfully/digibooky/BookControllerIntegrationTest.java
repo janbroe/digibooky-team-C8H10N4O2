@@ -14,15 +14,19 @@ import com.switchfully.digibooky.service.bookLoan.dto.BookLoanOutDTO;
 import com.switchfully.digibooky.service.books.BookMapper;
 import com.switchfully.digibooky.service.books.dto.BookDTO;
 import io.restassured.RestAssured;
+import org.apache.tomcat.util.http.fileupload.servlet.ServletRequestContext;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.util.ContentCachingResponseWrapper;
 
+import javax.servlet.http.HttpServletResponse;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -169,5 +173,44 @@ public class BookControllerIntegrationTest {
         assertThat(result.getReturnDate()).isEqualTo(LocalDate.now());
         assertThat(result.getMessage()).isEqualTo("Thank you for being a responsible adult");
         assertThat(result.getFee()).isEqualTo(0.0);
+    }
+
+    @Test
+    void givenInvalidBookLoanID_whenReturningBook_returnBadRequest() {
+        RestAssured
+                .given()
+                .baseUri("http://localhost")
+                .port(port)
+                .when()
+                .post("/books/" + "invalidLoanID" + "/return")
+                .then()
+                .assertThat()
+                .statusCode(HttpStatus.BAD_REQUEST.value());
+    }
+
+    @Test
+    void givenInvalidISBN_whenGettingBookDetails_returnBadRequest() {
+        RestAssured
+                .given()
+                .baseUri("http://localhost")
+                .port(port)
+                .when()
+                .get("/books/invalidISBN")
+                .then()
+                .assertThat()
+                .statusCode(HttpStatus.BAD_REQUEST.value());
+    }
+
+    @Test
+    void givenInvalidUserID_whenLendingBook_returnBadRequest() {
+        RestAssured
+                .given()
+                .baseUri("http://localhost")
+                .port(port)
+                .when()
+                .post("/books/invalidUserID/isbn1/lend")
+                .then()
+                .assertThat()
+                .statusCode(HttpStatus.BAD_REQUEST.value());
     }
 }
