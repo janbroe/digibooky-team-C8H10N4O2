@@ -4,13 +4,11 @@ import com.google.common.collect.Lists;
 
 import java.util.List;
 
-import static com.switchfully.digibooky.domain.users.Feature.LOGIN;
+import static com.switchfully.digibooky.domain.users.Feature.*;
 
 
 public enum Role {
-    MEMBER(Lists.newArrayList(LOGIN)),
-    ADMIN(Lists.newArrayList(LOGIN)),
-    LIBRARIAN(Lists.newArrayList(LOGIN));
+    MEMBER(Lists.newArrayList(LOGIN, LEND_BOOK, RETURN_BOOK));
 
     private final List<Feature> features;
 

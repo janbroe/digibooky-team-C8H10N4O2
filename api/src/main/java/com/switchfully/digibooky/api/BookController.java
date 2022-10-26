@@ -1,11 +1,13 @@
 package com.switchfully.digibooky.api;
 
 
+import com.switchfully.digibooky.domain.users.Feature;
 import com.switchfully.digibooky.service.bookLoan.BookLoanService;
 import com.switchfully.digibooky.service.bookLoan.dto.BookLoanInDTO;
 import com.switchfully.digibooky.service.bookLoan.dto.BookLoanOutDTO;
 import com.switchfully.digibooky.service.books.BookService;
 import com.switchfully.digibooky.service.books.dto.BookDTO;
+import com.switchfully.digibooky.service.security.SecurityService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -22,10 +24,12 @@ public class BookController {
     private final Logger log = LoggerFactory.getLogger(BookController.class);
     private final BookService bookService;
     private final BookLoanService bookLoanService;
+    private final SecurityService securityService;
 
-    public BookController(BookService bookService, BookLoanService bookLoanService) {
+    public BookController(BookService bookService, BookLoanService bookLoanService, SecurityService securityService) {
         this.bookService = bookService;
         this.bookLoanService = bookLoanService;
+        this.securityService = securityService;
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
@@ -42,14 +46,16 @@ public class BookController {
 
     @PostMapping(value = "{userID}/{isbn}/lend", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public BookLoanOutDTO lendBook(@PathVariable String userID, @PathVariable String isbn) {
+    public BookLoanOutDTO lendBook(@RequestHeader String authorization, @PathVariable String userID, @PathVariable String isbn) {
+        securityService.validateAuthorization(authorization, Feature.LEND_BOOK);
         log.debug("POST -> Controller request to put book loan with userID ".concat(userID).concat(" and isbn ").concat(isbn));
         return bookLoanService.lendBook(userID, isbn);
     }
 
     @PostMapping(value = "{loanID}/return", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public BookLoanInDTO returnBook(@PathVariable String loanID){
+    public BookLoanInDTO returnBook(@RequestHeader String authorization, @PathVariable String loanID){
+        securityService.validateAuthorization(authorization, Feature.RETURN_BOOK);
         log.debug("POST -> Controller request to post book return with lendingID ".concat(loanID));
         return bookLoanService.returnBook(loanID);
     }
