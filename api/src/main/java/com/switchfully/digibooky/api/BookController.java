@@ -39,6 +39,14 @@ public class BookController {
         return bookService.getAllBooks();
     }
 
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE, params = "isbn")
+    @ResponseStatus(HttpStatus.OK)
+    public List<BookDTO> searchBooksByIsbn(@RequestHeader String authorization, @RequestParam String isbn) {
+        securityService.validateAuthorization(authorization, Feature.SEARCH_BOOK);
+        log.info("GET -> Find book by isbn ".concat(isbn));
+        return bookService.searchBooksByISBN(isbn);
+    }
+
     @GetMapping(path = "{isbn}", produces = MediaType.APPLICATION_JSON_VALUE)
     public BookDTO getBookByISBN(@PathVariable String isbn) {
         log.debug("GET -> Controller request for book with ISBN ".concat(isbn));
@@ -65,8 +73,8 @@ public class BookController {
     @ResponseStatus(HttpStatus.CREATED)
     public BookDTO addNewBookToLibrary(@RequestHeader String authorization, @RequestBody CreateBookDTO createBookDTO) {
         securityService.validateAuthorization(authorization, Feature.CREATE_BOOK);
+        log.debug("POST -> Controller request to post new book ".concat(createBookDTO.toString()));
         return bookService.createBook(createBookDTO);
 
     }
-
 }

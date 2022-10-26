@@ -5,5 +5,6 @@ public enum Feature {
     LEND_BOOK,
     RETURN_BOOK,
     CREATE_LIBRARIAN,
-    CREATE_BOOK
+    CREATE_BOOK,
+    SEARCH_BOOK
 }

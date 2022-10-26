@@ -8,6 +8,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.NoSuchElementException;
+import java.util.stream.Collectors;
 
 @Repository
 public class BookRepository {
@@ -24,6 +25,13 @@ public class BookRepository {
 
     public void saveBook(Book book) {
         bookRepository.put(book.getIsbn(), book);
+    }
+
+    public Collection<Book> searchAllBooksByISBN(String isbn) {
+        log.info("we made it here in the repo.");
+        return bookRepository.values().stream()
+                .filter(book -> book.getIsbn().contains(isbn))
+                .collect(Collectors.toList());
     }
 
     public Collection<Book> getAllBooks() {

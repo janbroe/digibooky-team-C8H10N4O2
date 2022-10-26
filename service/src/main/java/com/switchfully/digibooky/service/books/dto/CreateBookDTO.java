@@ -34,4 +34,14 @@ public class CreateBookDTO {
     public Author getAuthor() {
         return author;
     }
+
+    @Override
+    public String toString() {
+        return "CreateBookDTO{" +
+                "isbn='" + isbn + '\'' +
+                ", title='" + title + '\'' +
+                ", author=" + author +
+                '}';
+    }
 }
+

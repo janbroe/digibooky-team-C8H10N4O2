@@ -7,6 +7,7 @@ import com.switchfully.digibooky.service.books.dto.CreateBookDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class BookService {
@@ -32,4 +33,9 @@ public class BookService {
         return bookMapper.mapBookToDTO(newBook);
     }
 
+    public List<BookDTO> searchBooksByISBN(String isbn) {
+        return bookRepository.searchAllBooksByISBN(isbn).stream()
+                .map(bookMapper::mapBookToDTO)
+                .toList();
+    }
 }
