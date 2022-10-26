@@ -28,9 +28,18 @@ public class BookRepository {
     }
 
     public Collection<Book> searchAllBooksByISBN(String isbn) {
-        log.info("we made it here in the repo.");
         return bookRepository.values().stream()
                 .filter(book -> book.getIsbn().contains(isbn))
+                .collect(Collectors.toList());
+    }
+    public Collection<Book> searchAllBooksByTitle(String title) {
+        return bookRepository.values().stream()
+                .filter(book -> book.getTitle().contains(title))
+                .collect(Collectors.toList());
+    }
+    public Collection<Book> searchAllBooksByAuthor(String author) {
+        return bookRepository.values().stream()
+                .filter(book -> book.getAuthorsFullName().contains(author))
                 .collect(Collectors.toList());
     }
 
@@ -46,4 +55,5 @@ public class BookRepository {
         }
         return bookRepository.get(isbn);
     }
+
 }

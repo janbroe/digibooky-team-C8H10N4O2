@@ -38,4 +38,16 @@ public class BookService {
                 .map(bookMapper::mapBookToDTO)
                 .toList();
     }
+
+    public List<BookDTO> searchBooksByTitle(String title) {
+        return bookRepository.searchAllBooksByTitle(title).stream()
+                .map(bookMapper::mapBookToDTO)
+                .toList();
+    }
+
+    public List<BookDTO> searchBooksByAuthor(String author) {
+        return bookRepository.searchAllBooksByAuthor(author).stream()
+                .map(bookMapper::mapBookToDTO)
+                .toList();
+    }
 }
