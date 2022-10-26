@@ -9,7 +9,8 @@ import static com.switchfully.digibooky.domain.users.Feature.*;
 
 public enum Role {
     MEMBER(Lists.newArrayList(LOGIN, LEND_BOOK, RETURN_BOOK)),
-    LIBRARIAN(Lists.newArrayList(LOGIN));
+    LIBRARIAN(Lists.newArrayList(LOGIN)),
+    ADMIN(Lists.newArrayList(LOGIN, CREATE_LIBRARIAN));
 
     private final List<Feature> features;
 

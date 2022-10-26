@@ -89,8 +89,8 @@ public class User {
 
     @Override
     public String toString() {
-        return "Member{" +
-                "userId='" + userId + '\'' +
+        return role.toString() +
+                "{userId='" + userId + '\'' +
                 ", email='" + email + '\'' +
                 '}';
     }

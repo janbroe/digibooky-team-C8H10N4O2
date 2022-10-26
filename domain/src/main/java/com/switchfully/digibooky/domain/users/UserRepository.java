@@ -14,12 +14,14 @@ public class UserRepository {
 
     public UserRepository() {
         this.memberRepositoryByID = new HashMap<>();
+        User god = new User(null, "god", "password", "god@lib.be", new Address("virtual space"), Role.ADMIN);
         User librarian1 = new User("inss0", "first0", "password", "test@lib.be", new Address("city0"), Role.LIBRARIAN);
         User user1 = new User("inss1", "first1", "password", "test@test.be", new Address("city1"), Role.MEMBER);
         User user2 = new User("inss2", "first2", "password", "tes2@test.be", new Address("city2"), Role.MEMBER);
         User user3 = new User("inss3", "first3", "password", "tes3@test.be", new Address("city3"), Role.MEMBER);
         User user4 = new User("inss4", "first4", "password", "tes4@test.be", new Address("city4"), Role.MEMBER);
         User user5 = new User("inss5", "first5", "password", "tes5@test.be", new Address("city5"), Role.MEMBER);
+        memberRepositoryByID.put(god.getUserId(), god);
         memberRepositoryByID.put(librarian1.getUserId(), librarian1);
         memberRepositoryByID.put(user1.getUserId(), user1);
         memberRepositoryByID.put(user2.getUserId(), user2);
