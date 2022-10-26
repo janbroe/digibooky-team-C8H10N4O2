@@ -16,7 +16,6 @@ import org.springframework.http.MediaType;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-//@ContextConfiguration(classes = MemberControllerIntegrationTest.class)
 class UserControllerIntegrationTest {
 
     @LocalServerPort

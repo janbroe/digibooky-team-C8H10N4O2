@@ -25,7 +25,7 @@ public class ControllerExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(WrongPasswordException.class)
     protected void wrongPasswordException(WrongPasswordException exception, HttpServletResponse response) throws IOException {
         log.info("GET -> ".concat(exception.getMessage()));
-        response.sendError(HttpStatus.FORBIDDEN.value(), exception.getMessage());
+        response.sendError(HttpStatus.BAD_REQUEST.value(), exception.getMessage());
     }
 
     @ExceptionHandler(UnauthorizedException.class)

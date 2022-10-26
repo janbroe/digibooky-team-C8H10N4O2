@@ -53,6 +53,7 @@ public class BookLoanRepository {
     }
 
     public void returnBook(BookLoanIn bookLoanIn) {
+        log.info("repo");
         bookLoansByID.put(bookLoanIn.getLoanID(), bookLoanIn);
         bookRepository.getBookByISBN(bookLoanIn.getBookISBN()).setAvailable();
     }

@@ -81,7 +81,7 @@ public class BookController {
     @ResponseStatus(HttpStatus.CREATED)
     public BookLoanInDTO returnBook(@RequestHeader String authorization, @PathVariable String loanID){
         securityService.validateAuthorization(authorization, Feature.RETURN_BOOK);
-        log.debug("POST -> Controller request to post book return with lendingID ".concat(loanID));
+        log.info("POST -> Controller request to post book return with lendingID ".concat(loanID));
         return bookLoanService.returnBook(loanID);
     }
 

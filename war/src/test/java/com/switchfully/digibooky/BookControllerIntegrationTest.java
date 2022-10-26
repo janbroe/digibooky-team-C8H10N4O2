@@ -14,22 +14,22 @@ import com.switchfully.digibooky.service.bookLoan.dto.BookLoanOutDTO;
 import com.switchfully.digibooky.service.books.BookMapper;
 import com.switchfully.digibooky.service.books.dto.BookDTO;
 import io.restassured.RestAssured;
+import io.restassured.http.Header;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 
 import java.time.LocalDate;
+import java.util.Base64;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
-
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-//@ContextConfiguration(classes = BookControllerIntegrationTest.class)
 public class BookControllerIntegrationTest {
     @LocalServerPort
     private int port;
@@ -115,7 +115,8 @@ public class BookControllerIntegrationTest {
 
     @Test
     void givenValidMember_createBookLoan_returnBookLoanOutDTO() {
-        User givenUser = new User("inss5", "first5", "password", "tes5@test.be", new Address("city5"), Role.MEMBER);
+        User givenUser = new User("inss5", "first5", "password", "user@test.be", new Address("city5"), Role.MEMBER);
+        String authorization = Base64.getEncoder().encodeToString("user@test.be:password".getBytes());
         userRepository.saveMember(givenUser);
 
         Book givenBook = bookRepository.getBookByISBN("isbn4");
@@ -124,6 +125,7 @@ public class BookControllerIntegrationTest {
                 .given()
                 .baseUri("http://localhost")
                 .port(port)
+                .headers("Authorization", "Basic " + authorization)
                 .when()
                 .post("/books/" + givenUser.getUserId() + "/" + givenBook.getIsbn() + "/lend")
                 .then()
@@ -143,7 +145,8 @@ public class BookControllerIntegrationTest {
 
     @Test
     void givenValidBookLoanID_whenReturningBook_returnBookLoanInDTO() {
-        User givenUser = new User("inss5", "first5", "password", "tes5@test.be", new Address("city5"), Role.MEMBER);
+        User givenUser = new User("inss5", "first5", "password", "user@test.be", new Address("city5"), Role.MEMBER);
+        String authorization = Base64.getEncoder().encodeToString("user@test.be:password".getBytes());
         userRepository.saveMember(givenUser);
 
         Book givenBook = bookRepository.getBookByISBN("isbn4");
@@ -156,6 +159,8 @@ public class BookControllerIntegrationTest {
                 .baseUri("http://localhost")
                 .port(port)
                 .when()
+                .accept(MediaType.APPLICATION_JSON_VALUE)
+                .headers("Authorization", "Basic " + authorization)
                 .post("/books/" + bookLoanOut.getLoanID() + "/return")
                 .then()
                 .assertThat()
