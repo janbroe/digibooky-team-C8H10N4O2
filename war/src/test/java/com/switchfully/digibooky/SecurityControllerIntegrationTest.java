@@ -16,7 +16,7 @@ import org.springframework.test.context.ContextConfiguration;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@ContextConfiguration(classes = SecurityControllerIntegrationTest.class)
+//@ContextConfiguration(classes = SecurityControllerIntegrationTest.class)
 public class SecurityControllerIntegrationTest {
     @LocalServerPort
     private int port;

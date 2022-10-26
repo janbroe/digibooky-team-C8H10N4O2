@@ -34,7 +34,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@ContextConfiguration(classes = BookControllerIntegrationTest.class)
+//@ContextConfiguration(classes = BookControllerIntegrationTest.class)
 public class BookControllerIntegrationTest {
     @LocalServerPort
     private int port;
