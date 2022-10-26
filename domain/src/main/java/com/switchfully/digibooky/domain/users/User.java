@@ -6,6 +6,7 @@ import java.util.UUID;
 import java.util.regex.Pattern;
 
 public class User {
+    public static final int INSS_LENGTH = 1;
     private final String userId;
     private final String inss;
     private final String firstname;
@@ -17,7 +18,7 @@ public class User {
 
     public User(String inss, String firstname, String lastname, String password, String email, Address address, Role role) {
         this.userId = UUID.randomUUID().toString();
-        this.inss = inss;
+        this.inss = validateINSS(inss);
         this.firstname = firstname;
         this.lastname = lastnameNotNull(lastname);
         this.password = new PasswordHasher(password).getHashedPassword();
@@ -28,6 +29,13 @@ public class User {
 
     public User(String inss, String lastname, String password, String email, Address address, Role role) {
         this(inss, null, lastname, password, email, address, role);
+    }
+
+    public String validateINSS(String inss) {
+        if (inss == null || inss.length() < INSS_LENGTH) {
+            throw new IllegalArgumentException("INSS should not be null and consists of " + INSS_LENGTH + " characters");
+        }
+        return inss;
     }
 
     public String emailVerification(String emailToVerify) {
