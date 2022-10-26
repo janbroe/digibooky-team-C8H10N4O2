@@ -1,339 +1,108 @@
-2022-10-25 18:33:00.906  INFO 14636 --- [main] c.s.d.SecurityControllerIntegrationTest  : Starting SecurityControllerIntegrationTest using Java 17 on DESKTOP-HAJB8D8 with PID 14636 (started by Dominique Van Eyken in C:\_development\switchfully\digibooky\war)
-2022-10-25 18:33:00.907  INFO 14636 --- [main] c.s.d.SecurityControllerIntegrationTest  : No active profile set, falling back to 1 default profile: "default"
-2022-10-25 18:33:02.607  INFO 14636 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
-2022-10-25 18:33:02.623  INFO 14636 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-10-25 18:33:02.624  INFO 14636 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-25 18:33:02.749  INFO 14636 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-10-25 18:33:02.750  INFO 14636 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1462 ms
-2022-10-25 18:33:03.796  INFO 14636 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 50442 (http) with context path ''
-2022-10-25 18:33:03.808  INFO 14636 --- [main] c.s.d.SecurityControllerIntegrationTest  : Started SecurityControllerIntegrationTest in 3.357 seconds (JVM running for 4.853)
-2022-10-25 18:33:04.413  INFO 14636 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='b21e58c5-1706-474a-8982-d54bb404793e', email='user@test.be'}
-2022-10-25 18:33:05.454  INFO 14636 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-10-25 18:33:05.456  INFO 14636 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-10-25 18:33:05.456  INFO 14636 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2022-10-25 18:39:22.118  INFO 10568 --- [main] c.s.d.SecurityControllerIntegrationTest  : Starting SecurityControllerIntegrationTest using Java 17 on DESKTOP-HAJB8D8 with PID 10568 (started by Dominique Van Eyken in C:\_development\switchfully\digibooky\war)
-2022-10-25 18:39:22.120  INFO 10568 --- [main] c.s.d.SecurityControllerIntegrationTest  : No active profile set, falling back to 1 default profile: "default"
-2022-10-25 18:39:23.549  INFO 10568 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
-2022-10-25 18:39:23.561  INFO 10568 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-10-25 18:39:23.561  INFO 10568 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-25 18:39:23.737  INFO 10568 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-10-25 18:39:23.737  INFO 10568 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1349 ms
-2022-10-25 18:39:24.693  INFO 10568 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 54593 (http) with context path ''
-2022-10-25 18:39:24.704  INFO 10568 --- [main] c.s.d.SecurityControllerIntegrationTest  : Started SecurityControllerIntegrationTest in 2.977 seconds (JVM running for 4.317)
-2022-10-25 18:39:25.242  INFO 10568 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='64a1fdc7-f708-4c7b-b9b0-f7e55290bc26', email='user@test.be'}
-2022-10-25 18:39:26.234  INFO 10568 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-10-25 18:39:26.235  INFO 10568 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-10-25 18:39:26.236  INFO 10568 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2022-10-25 18:46:22.560  INFO 14416 --- [main] c.s.d.SecurityControllerIntegrationTest  : Starting SecurityControllerIntegrationTest using Java 17 on DESKTOP-HAJB8D8 with PID 14416 (started by Dominique Van Eyken in C:\_development\switchfully\digibooky\war)
-2022-10-25 18:46:22.561  INFO 14416 --- [main] c.s.d.SecurityControllerIntegrationTest  : No active profile set, falling back to 1 default profile: "default"
-2022-10-25 18:46:23.983  INFO 14416 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
-2022-10-25 18:46:24.002  INFO 14416 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-10-25 18:46:24.002  INFO 14416 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-25 18:46:24.135  INFO 14416 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-10-25 18:46:24.135  INFO 14416 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1315 ms
-2022-10-25 18:46:25.115  INFO 14416 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 61350 (http) with context path ''
-2022-10-25 18:46:25.128  INFO 14416 --- [main] c.s.d.SecurityControllerIntegrationTest  : Started SecurityControllerIntegrationTest in 2.96 seconds (JVM running for 4.257)
-2022-10-25 18:46:25.665  INFO 14416 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='4df2850f-302a-4e1d-a193-989a636c88a9', email='user@test.be'}
-2022-10-25 18:46:26.611  INFO 14416 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-10-25 18:46:26.612  INFO 14416 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-10-25 18:46:26.612  INFO 14416 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2022-10-25 18:54:19.709  INFO 18020 --- [main] c.s.d.SecurityControllerIntegrationTest  : Starting SecurityControllerIntegrationTest using Java 17 on DESKTOP-HAJB8D8 with PID 18020 (started by Dominique Van Eyken in C:\_development\switchfully\digibooky\war)
-2022-10-25 18:54:19.710  INFO 18020 --- [main] c.s.d.SecurityControllerIntegrationTest  : No active profile set, falling back to 1 default profile: "default"
-2022-10-25 18:54:21.148  INFO 18020 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
-2022-10-25 18:54:21.161  INFO 18020 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-10-25 18:54:21.162  INFO 18020 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-25 18:54:21.285  INFO 18020 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-10-25 18:54:21.285  INFO 18020 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1314 ms
-2022-10-25 18:54:22.271  INFO 18020 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 54149 (http) with context path ''
-2022-10-25 18:54:22.282  INFO 18020 --- [main] c.s.d.SecurityControllerIntegrationTest  : Started SecurityControllerIntegrationTest in 2.943 seconds (JVM running for 4.224)
-2022-10-25 18:54:22.823  INFO 18020 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='49d2345f-f542-4309-83af-8cb822453916', email='user@test.be'}
-2022-10-25 18:54:23.873  INFO 18020 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-10-25 18:54:23.874  INFO 18020 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-10-25 18:54:23.875  INFO 18020 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-10-25 18:57:30.433  INFO 15636 --- [main] c.s.d.SecurityControllerIntegrationTest  : Starting SecurityControllerIntegrationTest using Java 17 on DESKTOP-HAJB8D8 with PID 15636 (started by Dominique Van Eyken in C:\_development\switchfully\digibooky\war)
-2022-10-25 18:57:30.435  INFO 15636 --- [main] c.s.d.SecurityControllerIntegrationTest  : No active profile set, falling back to 1 default profile: "default"
-2022-10-25 18:57:31.871  INFO 15636 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
-2022-10-25 18:57:31.890  INFO 15636 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-10-25 18:57:31.891  INFO 15636 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-25 18:57:32.027  INFO 15636 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-10-25 18:57:32.028  INFO 15636 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1333 ms
-2022-10-25 18:57:32.977  INFO 15636 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 54162 (http) with context path ''
-2022-10-25 18:57:32.989  INFO 15636 --- [main] c.s.d.SecurityControllerIntegrationTest  : Started SecurityControllerIntegrationTest in 2.954 seconds (JVM running for 4.251)
-2022-10-25 18:57:33.488  INFO 15636 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='eadeab04-c098-4c38-8012-0b57fe87b58c', email='user@test.be'}
-2022-10-25 18:57:34.475  INFO 15636 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-10-25 18:57:34.476  INFO 15636 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-10-25 18:57:34.476  INFO 15636 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2022-10-25 18:59:18.648  INFO 16560 --- [main] c.s.d.SecurityControllerIntegrationTest  : Starting SecurityControllerIntegrationTest using Java 17 on DESKTOP-HAJB8D8 with PID 16560 (started by Dominique Van Eyken in C:\_development\switchfully\digibooky\war)
-2022-10-25 18:59:18.650  INFO 16560 --- [main] c.s.d.SecurityControllerIntegrationTest  : No active profile set, falling back to 1 default profile: "default"
-2022-10-25 18:59:20.089  INFO 16560 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
-2022-10-25 18:59:20.103  INFO 16560 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-10-25 18:59:20.103  INFO 16560 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-25 18:59:20.220  INFO 16560 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-10-25 18:59:20.221  INFO 16560 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1309 ms
-2022-10-25 18:59:21.196  INFO 16560 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 54170 (http) with context path ''
-2022-10-25 18:59:21.209  INFO 16560 --- [main] c.s.d.SecurityControllerIntegrationTest  : Started SecurityControllerIntegrationTest in 2.926 seconds (JVM running for 4.223)
-2022-10-25 18:59:21.739  INFO 16560 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='8d5be875-7b28-48f8-8327-ae837d74cad7', email='user@test.be'}
-2022-10-25 18:59:22.731  INFO 16560 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-10-25 18:59:22.731  INFO 16560 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-10-25 18:59:22.732  INFO 16560 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-10-25 19:00:03.999  INFO 12792 --- [main] c.s.d.SecurityControllerIntegrationTest  : Starting SecurityControllerIntegrationTest using Java 17 on DESKTOP-HAJB8D8 with PID 12792 (started by Dominique Van Eyken in C:\_development\switchfully\digibooky\war)
-2022-10-25 19:00:04.000  INFO 12792 --- [main] c.s.d.SecurityControllerIntegrationTest  : No active profile set, falling back to 1 default profile: "default"
-2022-10-25 19:00:05.437  INFO 12792 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
-2022-10-25 19:00:05.450  INFO 12792 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-10-25 19:00:05.450  INFO 12792 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-25 19:00:05.575  INFO 12792 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-10-25 19:00:05.576  INFO 12792 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1307 ms
-2022-10-25 19:00:06.556  INFO 12792 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 54177 (http) with context path ''
-2022-10-25 19:00:06.568  INFO 12792 --- [main] c.s.d.SecurityControllerIntegrationTest  : Started SecurityControllerIntegrationTest in 2.943 seconds (JVM running for 4.233)
-2022-10-25 19:00:07.108  INFO 12792 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='7f23a0db-0bdb-4e25-b007-38633eeaf629', email='user@test.be'}
-2022-10-25 19:00:08.122  INFO 12792 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-10-25 19:00:08.123  INFO 12792 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-10-25 19:00:08.124  INFO 12792 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-10-25 19:01:49.003  INFO 18024 --- [main] c.s.d.SecurityControllerIntegrationTest  : Starting SecurityControllerIntegrationTest using Java 17 on DESKTOP-HAJB8D8 with PID 18024 (started by Dominique Van Eyken in C:\_development\switchfully\digibooky\war)
-2022-10-25 19:01:49.004  INFO 18024 --- [main] c.s.d.SecurityControllerIntegrationTest  : No active profile set, falling back to 1 default profile: "default"
-2022-10-25 19:01:50.471  INFO 18024 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
-2022-10-25 19:01:50.485  INFO 18024 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-10-25 19:01:50.485  INFO 18024 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-25 19:01:50.653  INFO 18024 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-10-25 19:01:50.653  INFO 18024 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1374 ms
-2022-10-25 19:01:51.622  INFO 18024 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 54186 (http) with context path ''
-2022-10-25 19:01:51.632  INFO 18024 --- [main] c.s.d.SecurityControllerIntegrationTest  : Started SecurityControllerIntegrationTest in 2.99 seconds (JVM running for 4.33)
-2022-10-25 19:01:52.166  INFO 18024 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='a59b3fd7-a2e9-4a17-9141-577ca8c96252', email='user@test.be'}
-2022-10-25 19:01:53.173  INFO 18024 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-10-25 19:01:53.173  INFO 18024 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-10-25 19:01:53.174  INFO 18024 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2022-10-25 19:08:05.831  INFO 17488 --- [main] c.s.d.SecurityControllerIntegrationTest  : Starting SecurityControllerIntegrationTest using Java 17 on DESKTOP-HAJB8D8 with PID 17488 (started by Dominique Van Eyken in C:\_development\switchfully\digibooky\war)
-2022-10-25 19:08:05.833  INFO 17488 --- [main] c.s.d.SecurityControllerIntegrationTest  : No active profile set, falling back to 1 default profile: "default"
-2022-10-25 19:08:07.713  INFO 17488 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
-2022-10-25 19:08:07.740  INFO 17488 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-10-25 19:08:07.741  INFO 17488 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-25 19:08:07.906  INFO 17488 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-10-25 19:08:07.906  INFO 17488 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1769 ms
-2022-10-25 19:08:09.411  INFO 15524 --- [main] c.s.d.SecurityControllerIntegrationTest  : Starting SecurityControllerIntegrationTest using Java 17 on DESKTOP-HAJB8D8 with PID 15524 (started by Dominique Van Eyken in C:\_development\switchfully\digibooky\war)
-2022-10-25 19:08:09.414  INFO 15524 --- [main] c.s.d.SecurityControllerIntegrationTest  : No active profile set, falling back to 1 default profile: "default"
-2022-10-25 19:08:09.433  INFO 17488 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 54996 (http) with context path ''
-2022-10-25 19:08:09.454  INFO 17488 --- [main] c.s.d.SecurityControllerIntegrationTest  : Started SecurityControllerIntegrationTest in 4.063 seconds (JVM running for 5.489)
-2022-10-25 19:08:10.315  INFO 17488 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='4866c54b-4abe-4f81-ad05-5f8aa0859e94', email='user@test.be'}
-2022-10-25 19:08:11.489  INFO 15524 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
-2022-10-25 19:08:11.508  INFO 15524 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-10-25 19:08:11.510  INFO 15524 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-25 19:08:11.696  INFO 15524 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-10-25 19:08:11.696  INFO 15524 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1861 ms
-2022-10-25 19:08:11.705  INFO 17488 --- [http-nio-auto-1-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-10-25 19:08:11.706  INFO 17488 --- [http-nio-auto-1-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-10-25 19:08:11.710  INFO 17488 --- [http-nio-auto-1-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2022-10-25 19:08:12.804  INFO 15524 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 54999 (http) with context path ''
-2022-10-25 19:08:12.819  INFO 15524 --- [main] c.s.d.SecurityControllerIntegrationTest  : Started SecurityControllerIntegrationTest in 4.001 seconds (JVM running for 5.774)
-2022-10-25 19:08:13.424  INFO 15524 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='d28dfc05-c9f6-4941-a020-fc30c39809a6', email='user@test.be'}
-2022-10-25 19:08:14.439  INFO 15524 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-10-25 19:08:14.440  INFO 15524 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-10-25 19:08:14.441  INFO 15524 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-10-25 19:10:53.982  INFO 17744 --- [main] c.s.d.SecurityControllerIntegrationTest  : Starting SecurityControllerIntegrationTest using Java 17 on DESKTOP-HAJB8D8 with PID 17744 (started by Dominique Van Eyken in C:\_development\switchfully\digibooky\war)
-2022-10-25 19:10:53.984  INFO 17744 --- [main] c.s.d.SecurityControllerIntegrationTest  : No active profile set, falling back to 1 default profile: "default"
-2022-10-25 19:10:55.439  INFO 17744 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
-2022-10-25 19:10:55.456  INFO 17744 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-10-25 19:10:55.457  INFO 17744 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-25 19:10:55.580  INFO 17744 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-10-25 19:10:55.580  INFO 17744 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1330 ms
-2022-10-25 19:10:56.566  INFO 17744 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 55010 (http) with context path ''
-2022-10-25 19:10:56.577  INFO 17744 --- [main] c.s.d.SecurityControllerIntegrationTest  : Started SecurityControllerIntegrationTest in 3.048 seconds (JVM running for 4.364)
-2022-10-25 19:10:57.119  INFO 17744 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='dac659e6-fca8-488f-9d15-c7a854032993', email='user@test.be'}
-2022-10-25 19:10:58.135  INFO 17744 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-10-25 19:10:58.135  INFO 17744 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-10-25 19:10:58.136  INFO 17744 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2022-10-25 19:17:19.213  INFO 13024 --- [main] c.s.d.BookControllerIntegrationTest      : Starting BookControllerIntegrationTest using Java 17 on DESKTOP-HAJB8D8 with PID 13024 (started by Dominique Van Eyken in C:\_development\switchfully\digibooky\war)
-2022-10-25 19:17:19.214  INFO 13024 --- [main] c.s.d.BookControllerIntegrationTest      : No active profile set, falling back to 1 default profile: "default"
-2022-10-25 19:17:20.712  INFO 13024 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
-2022-10-25 19:17:20.722  INFO 13024 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-10-25 19:17:20.723  INFO 13024 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-25 19:17:20.837  INFO 13024 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-10-25 19:17:20.838  INFO 13024 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1351 ms
-2022-10-25 19:17:21.821  INFO 13024 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 55023 (http) with context path ''
-2022-10-25 19:17:21.831  INFO 13024 --- [main] c.s.d.BookControllerIntegrationTest      : Started BookControllerIntegrationTest in 3.026 seconds (JVM running for 4.312)
-2022-10-25 19:17:22.349  INFO 13024 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='54eb638f-4723-4ce7-9b07-8b671b622ba5', email='test@test.be'}
-2022-10-25 19:17:22.350  INFO 13024 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='8ce7429c-9555-4f77-b918-4c412221d827', email='tes2@test.be'}
-2022-10-25 19:17:22.350  INFO 13024 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='4c527be1-734c-4d56-a07e-8758af441f51', email='tes3@test.be'}
-2022-10-25 19:17:22.351  INFO 13024 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='259c5199-fbd8-46c7-a90a-f4048afff702', email='tes4@test.be'}
-2022-10-25 19:17:23.370  INFO 13024 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-10-25 19:17:23.371  INFO 13024 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-10-25 19:17:23.371  INFO 13024 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2022-10-25 19:17:23.416  INFO 13024 --- [http-nio-auto-1-exec-1] c.s.d.d.e.ControllerExceptionHandler     : GET -> Book loan with ID invalidLoanID could not be found
-2022-10-25 19:19:28.019  INFO 6476 --- [main] c.s.d.BookControllerIntegrationTest      : Starting BookControllerIntegrationTest using Java 17 on DESKTOP-HAJB8D8 with PID 6476 (started by Dominique Van Eyken in C:\_development\switchfully\digibooky\war)
-2022-10-25 19:19:28.021  INFO 6476 --- [main] c.s.d.BookControllerIntegrationTest      : No active profile set, falling back to 1 default profile: "default"
-2022-10-25 19:19:29.513  INFO 6476 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
-2022-10-25 19:19:29.526  INFO 6476 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-10-25 19:19:29.526  INFO 6476 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-25 19:19:29.704  INFO 6476 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-10-25 19:19:29.704  INFO 6476 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1401 ms
-2022-10-25 19:19:30.724  INFO 6476 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 55034 (http) with context path ''
-2022-10-25 19:19:30.738  INFO 6476 --- [main] c.s.d.BookControllerIntegrationTest      : Started BookControllerIntegrationTest in 3.13 seconds (JVM running for 4.288)
-2022-10-25 19:19:31.278  INFO 6476 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='4b9d00c2-c56a-4c16-9b6c-284402b0d71a', email='test@test.be'}
-2022-10-25 19:19:31.279  INFO 6476 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='4161075c-3279-4379-8bf6-70a331b9d752', email='tes2@test.be'}
-2022-10-25 19:19:31.279  INFO 6476 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='e3b50386-6704-4005-ad7d-c46b6da22835', email='tes3@test.be'}
-2022-10-25 19:19:31.280  INFO 6476 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='f779ea77-eaf3-4e79-9e03-d583124cbaff', email='tes4@test.be'}
-2022-10-25 19:19:32.350  INFO 6476 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-10-25 19:19:32.350  INFO 6476 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-10-25 19:19:32.351  INFO 6476 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-10-25 19:19:32.393  INFO 6476 --- [http-nio-auto-1-exec-1] c.s.d.d.e.ControllerExceptionHandler     : GET -> Book loan with ID invalidLoanID could not be found
-2022-10-25 19:27:15.001  INFO 7988 --- [main] c.s.d.BookControllerIntegrationTest      : Starting BookControllerIntegrationTest using Java 17 on DESKTOP-HAJB8D8 with PID 7988 (started by Dominique Van Eyken in C:\_development\switchfully\digibooky\war)
-2022-10-25 19:27:15.002  INFO 7988 --- [main] c.s.d.BookControllerIntegrationTest      : No active profile set, falling back to 1 default profile: "default"
-2022-10-25 19:27:16.537  INFO 7988 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
-2022-10-25 19:27:16.548  INFO 7988 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-10-25 19:27:16.548  INFO 7988 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-25 19:27:16.737  INFO 7988 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-10-25 19:27:16.738  INFO 7988 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1471 ms
-2022-10-25 19:27:17.696  INFO 7988 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 55067 (http) with context path ''
-2022-10-25 19:27:17.706  INFO 7988 --- [main] c.s.d.BookControllerIntegrationTest      : Started BookControllerIntegrationTest in 3.111 seconds (JVM running for 4.32)
-2022-10-25 19:27:18.226  INFO 7988 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='af5bf5d6-6f2a-44d2-8134-35dbceb9529c', email='test@test.be'}
-2022-10-25 19:27:18.227  INFO 7988 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='205b8ae7-141b-4a99-978f-6306fdb21e6a', email='tes2@test.be'}
-2022-10-25 19:27:18.227  INFO 7988 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='b3f1a01b-7630-411a-b3fd-80952a9f9f56', email='tes3@test.be'}
-2022-10-25 19:27:18.227  INFO 7988 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='716b165a-c336-4930-9de4-b10b519378a5', email='tes4@test.be'}
-2022-10-25 19:27:19.254  INFO 7988 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-10-25 19:27:19.268  INFO 7988 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-10-25 19:27:19.269  INFO 7988 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-10-25 19:27:19.311  INFO 7988 --- [http-nio-auto-1-exec-1] c.s.d.d.e.ControllerExceptionHandler     : GET -> Book loan with ID invalidLoanID could not be found
-2022-10-25 19:28:52.614  INFO 11812 --- [main] c.s.d.BookControllerIntegrationTest      : Starting BookControllerIntegrationTest using Java 17 on DESKTOP-HAJB8D8 with PID 11812 (started by Dominique Van Eyken in C:\_development\switchfully\digibooky\war)
-2022-10-25 19:28:52.616  INFO 11812 --- [main] c.s.d.BookControllerIntegrationTest      : No active profile set, falling back to 1 default profile: "default"
-2022-10-25 19:28:54.166  INFO 11812 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
-2022-10-25 19:28:54.178  INFO 11812 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-10-25 19:28:54.179  INFO 11812 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-25 19:28:54.294  INFO 11812 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-10-25 19:28:54.294  INFO 11812 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1395 ms
-2022-10-25 19:28:55.266  INFO 11812 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 55077 (http) with context path ''
-2022-10-25 19:28:55.276  INFO 11812 --- [main] c.s.d.BookControllerIntegrationTest      : Started BookControllerIntegrationTest in 3.077 seconds (JVM running for 4.273)
-2022-10-25 19:28:55.797  INFO 11812 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='1264dda9-6fe7-4f1a-bd2d-17385a0e952c', email='test@test.be'}
-2022-10-25 19:28:55.797  INFO 11812 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='b144d1d9-7f59-4840-b4c1-30853cbb553c', email='tes2@test.be'}
-2022-10-25 19:28:55.797  INFO 11812 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='b0d0e914-ad83-47fc-978f-8eeb3f506eba', email='tes3@test.be'}
-2022-10-25 19:28:55.798  INFO 11812 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='884ec6a7-4ce2-4257-a423-446ddfed2d9d', email='tes4@test.be'}
-2022-10-25 19:28:56.819  INFO 11812 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-10-25 19:28:56.820  INFO 11812 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-10-25 19:28:56.821  INFO 11812 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-10-25 19:28:56.865  INFO 11812 --- [http-nio-auto-1-exec-1] c.s.d.d.e.ControllerExceptionHandler     : GET -> Book loan with ID invalidLoanID could not be found
-2022-10-25 19:36:24.457  INFO 13612 --- [main] c.s.d.BookControllerIntegrationTest      : Starting BookControllerIntegrationTest using Java 17 on DESKTOP-HAJB8D8 with PID 13612 (started by Dominique Van Eyken in C:\_development\switchfully\digibooky\war)
-2022-10-25 19:36:24.458  INFO 13612 --- [main] c.s.d.BookControllerIntegrationTest      : No active profile set, falling back to 1 default profile: "default"
-2022-10-25 19:36:25.949  INFO 13612 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
-2022-10-25 19:36:25.961  INFO 13612 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-10-25 19:36:25.962  INFO 13612 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-25 19:36:26.111  INFO 13612 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-10-25 19:36:26.111  INFO 13612 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1364 ms
-2022-10-25 19:36:27.077  INFO 13612 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 64343 (http) with context path ''
-2022-10-25 19:36:27.090  INFO 13612 --- [main] c.s.d.BookControllerIntegrationTest      : Started BookControllerIntegrationTest in 3.033 seconds (JVM running for 4.273)
-2022-10-25 19:36:27.633  INFO 13612 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='06d7817b-1435-45ac-beb1-ad830d592efc', email='test@test.be'}
-2022-10-25 19:36:27.634  INFO 13612 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='82e34ac9-99e7-416d-898d-03e3b697b63c', email='tes2@test.be'}
-2022-10-25 19:36:27.635  INFO 13612 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='e0e0772e-56fe-4cbc-a4d6-ba4e6e7cfae7', email='tes3@test.be'}
-2022-10-25 19:36:27.635  INFO 13612 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='f1eba452-758a-43ed-8003-8f798c6f2837', email='tes4@test.be'}
-2022-10-25 19:36:28.644  INFO 13612 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-10-25 19:36:28.644  INFO 13612 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-10-25 19:36:28.645  INFO 13612 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-10-25 19:36:28.689  INFO 13612 --- [http-nio-auto-1-exec-1] c.s.d.d.e.ControllerExceptionHandler     : GET -> Book loan with ID invalidLoanID could not be found
-2022-10-25 19:37:19.378  INFO 4776 --- [main] c.s.d.BookControllerIntegrationTest      : Starting BookControllerIntegrationTest using Java 17 on DESKTOP-HAJB8D8 with PID 4776 (started by Dominique Van Eyken in C:\_development\switchfully\digibooky\war)
-2022-10-25 19:37:19.379  INFO 4776 --- [main] c.s.d.BookControllerIntegrationTest      : No active profile set, falling back to 1 default profile: "default"
-2022-10-25 19:37:20.861  INFO 4776 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
-2022-10-25 19:37:20.873  INFO 4776 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-10-25 19:37:20.873  INFO 4776 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-25 19:37:21.046  INFO 4776 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-10-25 19:37:21.046  INFO 4776 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1398 ms
-2022-10-25 19:37:21.993  INFO 4776 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 64350 (http) with context path ''
-2022-10-25 19:37:22.003  INFO 4776 --- [main] c.s.d.BookControllerIntegrationTest      : Started BookControllerIntegrationTest in 3.048 seconds (JVM running for 4.315)
-2022-10-25 19:37:22.580  INFO 4776 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='a63c74ae-c57a-4109-93e1-9f5c624499f1', email='test@test.be'}
-2022-10-25 19:37:22.581  INFO 4776 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='60e8c12f-6c91-4ff6-ab0f-742465b7caf9', email='tes2@test.be'}
-2022-10-25 19:37:22.582  INFO 4776 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='8c8aa41f-7ddd-4570-9171-c72330f90d0d', email='tes3@test.be'}
-2022-10-25 19:37:22.583  INFO 4776 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='366014c4-c181-4c02-9b04-077d4961ccd3', email='tes4@test.be'}
-2022-10-25 19:37:23.576  INFO 4776 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-10-25 19:37:23.576  INFO 4776 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-10-25 19:37:23.577  INFO 4776 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-10-25 19:37:23.615  INFO 4776 --- [http-nio-auto-1-exec-1] c.s.d.d.e.ControllerExceptionHandler     : GET -> Book loan with ID invalidLoanID could not be found
-2022-10-25 19:47:37.724  INFO 18656 --- [main] c.s.d.BookControllerIntegrationTest      : Starting BookControllerIntegrationTest using Java 17 on DESKTOP-HAJB8D8 with PID 18656 (started by Dominique Van Eyken in C:\_development\switchfully\digibooky\war)
-2022-10-25 19:47:37.726  INFO 18656 --- [main] c.s.d.BookControllerIntegrationTest      : No active profile set, falling back to 1 default profile: "default"
-2022-10-25 19:47:39.215  INFO 18656 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
-2022-10-25 19:47:39.231  INFO 18656 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-10-25 19:47:39.232  INFO 18656 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-25 19:47:39.348  INFO 18656 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-10-25 19:47:39.349  INFO 18656 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1347 ms
-2022-10-25 19:47:40.274  INFO 18656 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 64365 (http) with context path ''
-2022-10-25 19:47:40.284  INFO 18656 --- [main] c.s.d.BookControllerIntegrationTest      : Started BookControllerIntegrationTest in 2.952 seconds (JVM running for 4.206)
-2022-10-25 19:47:40.825  INFO 18656 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='66eead61-4494-4bef-acea-68cca9340997', email='test@test.be'}
-2022-10-25 19:47:40.826  INFO 18656 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='21830138-cdc4-4e04-92e0-04929e599368', email='tes2@test.be'}
-2022-10-25 19:47:40.826  INFO 18656 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='7128dcd1-b209-44e0-9ff1-6d2c30af81f1', email='tes3@test.be'}
-2022-10-25 19:47:40.827  INFO 18656 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='4b3e7fa3-2c1e-4473-9910-0d3f08305982', email='tes4@test.be'}
-2022-10-25 19:47:41.826  INFO 18656 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-10-25 19:47:41.826  INFO 18656 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-10-25 19:47:41.827  INFO 18656 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-10-25 19:47:42.187  INFO 18656 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='15fcbf08-28a1-4c0e-acca-bb2fbf0408cd', email='test@test.be'}
-2022-10-25 19:47:42.188  INFO 18656 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='9a203eab-580f-4c5d-8c44-ae55501dbb54', email='tes2@test.be'}
-2022-10-25 19:47:42.188  INFO 18656 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='40754f8c-9001-4594-84df-60a61ce6178e', email='tes3@test.be'}
-2022-10-25 19:47:42.188  INFO 18656 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='6f4163f2-c757-43f6-8c61-11ea3c2f0628', email='tes4@test.be'}
-2022-10-25 19:47:42.226  INFO 18656 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='1d375b21-ac8b-468e-94a9-c930d4ba84ff', email='test@test.be'}
-2022-10-25 19:47:42.227  INFO 18656 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='cfe13d6e-9ce6-43ce-9999-b519a0b21e8f', email='tes2@test.be'}
-2022-10-25 19:47:42.228  INFO 18656 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='bb4de18b-9d2e-4d15-a770-2659722f39b1', email='tes3@test.be'}
-2022-10-25 19:47:42.228  INFO 18656 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='abeddab5-24d0-4ea7-a003-d77129615c76', email='tes4@test.be'}
-2022-10-25 19:47:42.269  INFO 18656 --- [http-nio-auto-1-exec-3] c.s.d.d.e.ControllerExceptionHandler     : GET -> Book loan with ID invalidLoanID could not be found
-2022-10-25 19:47:42.300  INFO 18656 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='99302bee-43a3-4266-a890-bbfa2ccc7016', email='test@test.be'}
-2022-10-25 19:47:42.301  INFO 18656 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='7700cdd0-83fb-4b19-8292-bc5338413f41', email='tes2@test.be'}
-2022-10-25 19:47:42.301  INFO 18656 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='86414084-f0eb-4b9e-a5e9-2247bcd163dd', email='tes3@test.be'}
-2022-10-25 19:47:42.302  INFO 18656 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='5721da0c-7469-45fb-a5dd-05881395f7d9', email='tes4@test.be'}
-2022-10-25 19:47:42.317  INFO 18656 --- [http-nio-auto-1-exec-4] c.s.d.d.e.ControllerExceptionHandler     : GET -> Member with ID invalidUserID does not exist
-2022-10-25 19:47:42.325  INFO 18656 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='c2a238a7-99cd-44e3-a68d-3fa754178594', email='test@test.be'}
-2022-10-25 19:47:42.326  INFO 18656 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='50a8f9d2-2341-4d2f-b2d3-bf41bd1a3973', email='tes2@test.be'}
-2022-10-25 19:47:42.326  INFO 18656 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='c91ba0d0-c042-4b6b-aa62-359ad7384563', email='tes3@test.be'}
-2022-10-25 19:47:42.326  INFO 18656 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='86888714-8281-404c-83c4-7102877aa330', email='tes4@test.be'}
-2022-10-25 19:47:42.339  WARN 18656 --- [http-nio-auto-1-exec-5] o.s.web.servlet.PageNotFound             : Request method 'POST' not supported
-2022-10-25 19:47:42.368  INFO 18656 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='cba82827-81d7-402a-a4e3-9aa35e24a88e', email='test@test.be'}
-2022-10-25 19:47:42.369  INFO 18656 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='f4eb607e-b112-4fb7-a337-5dd949795c1e', email='tes2@test.be'}
-2022-10-25 19:47:42.370  INFO 18656 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='07af57d1-c3df-4b56-b935-178708f3c590', email='tes3@test.be'}
-2022-10-25 19:47:42.370  INFO 18656 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='a7a08811-70dd-46e5-bb21-8e4a752a3d36', email='tes4@test.be'}
-2022-10-25 19:47:42.371  INFO 18656 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='0297dad0-d181-44bb-bbdd-70a45ecf1960', email='tes5@test.be'}
-2022-10-25 19:47:42.383  INFO 18656 --- [http-nio-auto-1-exec-6] c.s.d.d.bookLoans.BookLoanRepository     : POST -> BookLoan{memberID='0297dad0-d181-44bb-bbdd-70a45ecf1960', bookISBN='isbn4', loanID='7e15cddb-6990-45de-ab24-18356b55c7ac'}
-2022-10-25 19:47:42.413  INFO 18656 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='822f6dc8-72f0-4cd9-8ba8-a5639ea8961b', email='test@test.be'}
-2022-10-25 19:47:42.414  INFO 18656 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='53a1070f-0a0e-4074-94c9-73a58794cd58', email='tes2@test.be'}
-2022-10-25 19:47:42.414  INFO 18656 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='16e061df-f64e-4a8b-8b6e-0dd2b4c5e318', email='tes3@test.be'}
-2022-10-25 19:47:42.414  INFO 18656 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='31675f9e-358a-4e5f-aee2-434e44ee807a', email='tes4@test.be'}
-2022-10-25 19:47:42.414  INFO 18656 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='74630cba-8e4f-484a-9b60-99b14556f628', email='tes5@test.be'}
-2022-10-25 19:47:42.415  INFO 18656 --- [main] c.s.d.d.bookLoans.BookLoanRepository     : POST -> BookLoan{memberID='74630cba-8e4f-484a-9b60-99b14556f628', bookISBN='isbn4', loanID='fe284d7d-6bb6-4c0b-9781-3ec74b26a262'}
-2022-10-25 19:49:31.203  INFO 4200 --- [main] c.s.d.BookControllerIntegrationTest      : Starting BookControllerIntegrationTest using Java 17 on DESKTOP-HAJB8D8 with PID 4200 (started by Dominique Van Eyken in C:\_development\switchfully\digibooky\war)
-2022-10-25 19:49:31.205  INFO 4200 --- [main] c.s.d.BookControllerIntegrationTest      : No active profile set, falling back to 1 default profile: "default"
-2022-10-25 19:49:32.707  INFO 4200 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
-2022-10-25 19:49:32.719  INFO 4200 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-10-25 19:49:32.719  INFO 4200 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-25 19:49:32.857  INFO 4200 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-10-25 19:49:32.857  INFO 4200 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1384 ms
-2022-10-25 19:49:33.836  INFO 4200 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 64380 (http) with context path ''
-2022-10-25 19:49:33.847  INFO 4200 --- [main] c.s.d.BookControllerIntegrationTest      : Started BookControllerIntegrationTest in 3.035 seconds (JVM running for 4.267)
-2022-10-25 19:49:34.356  INFO 4200 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='6500d74d-73b8-4c7e-b7fc-9077a4500e92', email='test@test.be'}
-2022-10-25 19:49:34.357  INFO 4200 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='b2238fd8-1b46-4a3f-aeda-0dddd13000d7', email='tes2@test.be'}
-2022-10-25 19:49:34.358  INFO 4200 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='1355072f-915b-4e9d-88dd-ce71b42cdfb6', email='tes3@test.be'}
-2022-10-25 19:49:34.358  INFO 4200 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='21ecfae1-0168-4fac-80b1-30f9b9afe4b2', email='tes4@test.be'}
-2022-10-25 19:49:35.323  INFO 4200 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-10-25 19:49:35.323  INFO 4200 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-10-25 19:49:35.323  INFO 4200 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2022-10-25 19:49:35.677  INFO 4200 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='46935843-2930-41a0-80e0-49e038cf2c4f', email='test@test.be'}
-2022-10-25 19:49:35.677  INFO 4200 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='1febeb11-b74d-461a-a08e-b3b98545fef8', email='tes2@test.be'}
-2022-10-25 19:49:35.678  INFO 4200 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='0e32a22e-d38f-4429-a034-a6b47c1568a5', email='tes3@test.be'}
-2022-10-25 19:49:35.678  INFO 4200 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='6e98c725-5af4-4908-8cac-7dbce92cf657', email='tes4@test.be'}
-2022-10-25 19:49:35.721  INFO 4200 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='6f5601bb-2759-4dec-836d-9613ea46dc45', email='test@test.be'}
-2022-10-25 19:49:35.721  INFO 4200 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='d628b885-052b-41dc-b461-87479bccd0a8', email='tes2@test.be'}
-2022-10-25 19:49:35.722  INFO 4200 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='98cc741e-d174-42a3-8e40-7c147a7c6d75', email='tes3@test.be'}
-2022-10-25 19:49:35.722  INFO 4200 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='b040d3ef-addb-4863-beb8-42dab99cba3b', email='tes4@test.be'}
-2022-10-25 19:49:35.759  INFO 4200 --- [http-nio-auto-1-exec-3] c.s.d.d.e.ControllerExceptionHandler     : GET -> Book loan with ID invalidLoanID could not be found
-2022-10-25 19:49:35.790  INFO 4200 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='daa590d1-9a4c-41d2-af00-646440e4910d', email='test@test.be'}
-2022-10-25 19:49:35.791  INFO 4200 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='10f5489a-f810-45bd-b333-b77c146d7ece', email='tes2@test.be'}
-2022-10-25 19:49:35.791  INFO 4200 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='4f9e177c-5e28-4e2f-96c9-636d33c0cdbe', email='tes3@test.be'}
-2022-10-25 19:49:35.791  INFO 4200 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='db7aba5c-b481-46af-8cfe-235c3266c708', email='tes4@test.be'}
-2022-10-25 19:49:35.803  INFO 4200 --- [http-nio-auto-1-exec-4] c.s.d.d.e.ControllerExceptionHandler     : GET -> Member with ID invalidUserID does not exist
-2022-10-25 19:49:35.811  INFO 4200 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='70624427-b8ee-4c92-8778-3642c7b8a11b', email='test@test.be'}
-2022-10-25 19:49:35.812  INFO 4200 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='1abc8c11-b15c-476f-9a8e-6063d657b0f2', email='tes2@test.be'}
-2022-10-25 19:49:35.812  INFO 4200 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='11fbcdb9-2c8e-423c-b771-887c8b68040a', email='tes3@test.be'}
-2022-10-25 19:49:35.812  INFO 4200 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='914d8b48-899b-4f44-9dac-344a0c45addc', email='tes4@test.be'}
-2022-10-25 19:49:35.823  INFO 4200 --- [http-nio-auto-1-exec-5] c.s.d.d.e.ControllerExceptionHandler     : GET -> Book with ISBN invalidISBN was not found
-2022-10-25 19:49:35.831  INFO 4200 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='3e4e69fc-b23a-44ab-bd84-088489a81d50', email='test@test.be'}
-2022-10-25 19:49:35.831  INFO 4200 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='a32bbcdb-1ab3-4590-87f9-6c7ddfad1f2b', email='tes2@test.be'}
-2022-10-25 19:49:35.833  INFO 4200 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='0cd7b280-204a-4eb1-b800-784440e2234f', email='tes3@test.be'}
-2022-10-25 19:49:35.833  INFO 4200 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='17177df0-ece0-4411-a527-e4a43e425f62', email='tes4@test.be'}
-2022-10-25 19:49:35.834  INFO 4200 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='f50675f9-823a-44a2-a358-8e63403ccfdb', email='tes5@test.be'}
-2022-10-25 19:49:35.849  INFO 4200 --- [http-nio-auto-1-exec-6] c.s.d.d.bookLoans.BookLoanRepository     : POST -> BookLoan{memberID='f50675f9-823a-44a2-a358-8e63403ccfdb', bookISBN='isbn4', loanID='a4034fe6-93c4-4801-b968-2e8e4bf2edfb'}
-2022-10-25 19:49:35.863  INFO 4200 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='a9e07c42-2498-42a8-9f7c-fa0cbd56b2c7', email='test@test.be'}
-2022-10-25 19:49:35.864  INFO 4200 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='0e1bed47-abd6-4a01-a751-cd9af66f254d', email='tes2@test.be'}
-2022-10-25 19:49:35.864  INFO 4200 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='1c407f16-5c80-49b2-80e7-5b3c974ddead', email='tes3@test.be'}
-2022-10-25 19:49:35.864  INFO 4200 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='881cb069-04ee-455b-9134-fdc75cab9985', email='tes4@test.be'}
-2022-10-25 19:49:35.865  INFO 4200 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='417ce3dc-2c45-4a04-bf1a-a450ab7c4f11', email='tes5@test.be'}
-2022-10-25 19:49:35.865  INFO 4200 --- [main] c.s.d.d.bookLoans.BookLoanRepository     : POST -> BookLoan{memberID='417ce3dc-2c45-4a04-bf1a-a450ab7c4f11', bookISBN='isbn4', loanID='ba01a96f-f3ee-4cc7-9e47-89601e952cf9'}
+2022-10-26 08:58:41.178  INFO 9052 --- [main] c.s.d.BookControllerIntegrationTest      : Starting BookControllerIntegrationTest using Java 17 on DESKTOP-HAJB8D8 with PID 9052 (started by Dominique Van Eyken in C:\_development\switchfully\digibooky\war)
+2022-10-26 08:58:41.197  INFO 9052 --- [main] c.s.d.BookControllerIntegrationTest      : No active profile set, falling back to 1 default profile: "default"
+2022-10-26 08:58:45.893  INFO 9052 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-10-26 08:58:45.940  INFO 9052 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-26 08:58:45.942  INFO 9052 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-26 08:58:46.329  INFO 9052 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-26 08:58:46.330  INFO 9052 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3990 ms
+2022-10-26 08:58:48.887  INFO 9052 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 50142 (http) with context path ''
+2022-10-26 08:58:48.913  INFO 9052 --- [main] c.s.d.BookControllerIntegrationTest      : Started BookControllerIntegrationTest in 9.183 seconds (JVM running for 16.798)
+2022-10-26 08:58:50.697  INFO 9052 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='91bd9c1b-8a84-4a0d-b8de-e2c78fe376b8', email='test@test.be'}
+2022-10-26 08:58:50.699  INFO 9052 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='096c8c3c-a3bf-4cdb-8800-b447af736d43', email='tes2@test.be'}
+2022-10-26 08:58:50.700  INFO 9052 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='383b797c-43ba-40cb-bb57-41877afaeecc', email='tes3@test.be'}
+2022-10-26 08:58:50.702  INFO 9052 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='40202ccd-35f7-45ab-ba7a-faac1232df90', email='tes4@test.be'}
+2022-10-26 08:58:53.488  INFO 9052 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-26 08:58:53.489  INFO 9052 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-26 08:58:53.492  INFO 9052 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-10-26 08:58:54.643  INFO 9052 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='20dad495-5c85-4572-a879-333f5fcae244', email='test@test.be'}
+2022-10-26 08:58:54.644  INFO 9052 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='f82ca383-aad9-4b9c-8fa4-5810ccc7bfbd', email='tes2@test.be'}
+2022-10-26 08:58:54.645  INFO 9052 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='d9f2a0d5-f4bb-4beb-bf8d-c18085c93950', email='tes3@test.be'}
+2022-10-26 08:58:54.647  INFO 9052 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='d360d3e1-f848-4e8b-b511-c21c837cdcec', email='tes4@test.be'}
+2022-10-26 08:58:54.770  INFO 9052 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='96047ab2-d99d-45c0-8229-6b4ed3dc10fd', email='test@test.be'}
+2022-10-26 08:58:54.772  INFO 9052 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='e544a184-02fe-4d08-adb1-14c280c15599', email='tes2@test.be'}
+2022-10-26 08:58:54.774  INFO 9052 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='3a1ad430-8c97-4fff-bfad-738d145b0970', email='tes3@test.be'}
+2022-10-26 08:58:54.775  INFO 9052 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='c4c9aeba-79c3-4f94-b120-4d2e46da5895', email='tes4@test.be'}
+2022-10-26 08:58:54.869  INFO 9052 --- [http-nio-auto-1-exec-4] c.s.d.d.e.ControllerExceptionHandler     : GET -> Book loan with ID invalidLoanID could not be found
+2022-10-26 08:58:54.948  INFO 9052 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='2e6e4764-5349-45eb-b399-71e37478132d', email='test@test.be'}
+2022-10-26 08:58:54.950  INFO 9052 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='a0d60e52-9d62-4fa7-8467-265a0067d716', email='tes2@test.be'}
+2022-10-26 08:58:54.951  INFO 9052 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='2a3c48f9-699f-481f-b8f0-bb7c89a189b6', email='tes3@test.be'}
+2022-10-26 08:58:54.953  INFO 9052 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='21681288-a3b0-4139-93e5-664ba053f323', email='tes4@test.be'}
+2022-10-26 08:58:54.990  INFO 9052 --- [http-nio-auto-1-exec-5] c.s.d.d.e.ControllerExceptionHandler     : GET -> Member with ID invalidUserID does not exist
+2022-10-26 08:58:55.019  INFO 9052 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='ee1a3bea-01a3-4b03-8d7b-e70f414a05e2', email='test@test.be'}
+2022-10-26 08:58:55.020  INFO 9052 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='a8e84c97-a4d2-4ceb-bf6f-d1c577ce0c11', email='tes2@test.be'}
+2022-10-26 08:58:55.021  INFO 9052 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='8526691e-2272-4913-8678-1c0a65f79dff', email='tes3@test.be'}
+2022-10-26 08:58:55.024  INFO 9052 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='0e99b138-f99d-47a8-a407-4047e53ee4c1', email='tes4@test.be'}
+2022-10-26 08:58:55.064  INFO 9052 --- [http-nio-auto-1-exec-6] c.s.d.d.e.ControllerExceptionHandler     : GET -> Book with ISBN invalidISBN was not found
+2022-10-26 08:58:55.088  INFO 9052 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='ea2dce90-452e-4116-a8c1-fcb9490b5eb5', email='test@test.be'}
+2022-10-26 08:58:55.089  INFO 9052 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='d7d28fc6-a496-4016-96a3-c506df91466a', email='tes2@test.be'}
+2022-10-26 08:58:55.091  INFO 9052 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='98d7e74c-f267-43a6-b8ee-12ba4bb5f87b', email='tes3@test.be'}
+2022-10-26 08:58:55.091  INFO 9052 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='74d65e53-ab54-47ab-afd5-7d73309a6cff', email='tes4@test.be'}
+2022-10-26 08:58:55.093  INFO 9052 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='4dbf0057-afc7-423a-bb88-3da9801c7bf0', email='tes5@test.be'}
+2022-10-26 08:58:55.122  INFO 9052 --- [http-nio-auto-1-exec-7] c.s.d.d.bookLoans.BookLoanRepository     : POST -> BookLoan{memberID='4dbf0057-afc7-423a-bb88-3da9801c7bf0', bookISBN='isbn4', loanID='94bd393c-1d07-4dca-9c6b-43adcdb351f7'}
+2022-10-26 08:58:55.159  INFO 9052 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='22e6e6dd-3257-48db-843d-abdcea67a703', email='test@test.be'}
+2022-10-26 08:58:55.161  INFO 9052 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='07431251-06bc-48e8-b3b2-3beda7725e03', email='tes2@test.be'}
+2022-10-26 08:58:55.162  INFO 9052 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='bddfddc1-6cc3-4979-b933-a6c7a98369a1', email='tes3@test.be'}
+2022-10-26 08:58:55.163  INFO 9052 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='66567909-9e39-4df1-a158-20770617fafb', email='tes4@test.be'}
+2022-10-26 08:58:55.166  INFO 9052 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='2f867510-d1f9-4d4e-9cb1-963950ac68bb', email='tes5@test.be'}
+2022-10-26 08:58:55.166  INFO 9052 --- [main] c.s.d.d.bookLoans.BookLoanRepository     : POST -> BookLoan{memberID='2f867510-d1f9-4d4e-9cb1-963950ac68bb', bookISBN='isbn4', loanID='43c9a812-9891-4b87-bc7f-04f7859eafd3'}
+2022-10-26 08:58:55.277  INFO 9052 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.switchfully.digibooky.MemberControllerIntegrationTest], using SpringBootContextLoader
+2022-10-26 08:58:55.279  INFO 9052 --- [main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.switchfully.digibooky.MemberControllerIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-10-26 08:58:55.280  INFO 9052 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.switchfully.digibooky.MemberControllerIntegrationTest]: MemberControllerIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2022-10-26 08:58:55.287  INFO 9052 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.switchfully.digibooky.Application for test class com.switchfully.digibooky.MemberControllerIntegrationTest
+2022-10-26 08:58:55.290  INFO 9052 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-10-26 08:58:55.293  INFO 9052 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@66e62fc4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7e28f150, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@23aaa756, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@2d5d001f, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7a92827f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@43094e0c, org.springframework.test.context.event.EventPublishingTestExecutionListener@35efd12c, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@70f76276, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@1e18876d, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@17e8c38c, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5c4516ec, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@17ea3bc0, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@4d93e5bf]
+2022-10-26 08:58:55.527  INFO 9052 --- [http-nio-auto-1-exec-9] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='cca46cf3-ea87-4916-87e0-fa2441215899', email='test@test.test'}
+2022-10-26 09:00:21.079  INFO 16684 --- [main] c.s.d.BookControllerIntegrationTest      : Starting BookControllerIntegrationTest using Java 17 on DESKTOP-HAJB8D8 with PID 16684 (started by Dominique Van Eyken in C:\_development\switchfully\digibooky\war)
+2022-10-26 09:00:21.083  INFO 16684 --- [main] c.s.d.BookControllerIntegrationTest      : No active profile set, falling back to 1 default profile: "default"
+2022-10-26 09:00:26.260  INFO 16684 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-10-26 09:00:26.321  INFO 16684 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-26 09:00:26.322  INFO 16684 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-26 09:00:26.755  INFO 16684 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-26 09:00:26.756  INFO 16684 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4387 ms
+2022-10-26 09:00:29.151  INFO 16684 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 50173 (http) with context path ''
+2022-10-26 09:00:29.180  INFO 16684 --- [main] c.s.d.BookControllerIntegrationTest      : Started BookControllerIntegrationTest in 9.606 seconds (JVM running for 14.119)
+2022-10-26 09:00:30.734  INFO 16684 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='c6f1a7b5-22e6-4736-96ac-3402f2fddd31', email='test@test.be'}
+2022-10-26 09:00:30.735  INFO 16684 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='4bfd7098-b983-4166-ad30-eb348044c284', email='tes2@test.be'}
+2022-10-26 09:00:30.736  INFO 16684 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='a514bd0e-a540-4346-99a1-8a9c113694d6', email='tes3@test.be'}
+2022-10-26 09:00:30.737  INFO 16684 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='57db1a08-15c4-411c-9ffe-e370fe01f342', email='tes4@test.be'}
+2022-10-26 09:00:33.724  INFO 16684 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-26 09:00:33.726  INFO 16684 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-26 09:00:33.728  INFO 16684 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-10-26 09:00:34.834  INFO 16684 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='a359cf49-0529-4f1e-9122-56a8299d9ae1', email='test@test.be'}
+2022-10-26 09:00:34.836  INFO 16684 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='302bde8f-ef2f-4f71-af91-b43292ec05bd', email='tes2@test.be'}
+2022-10-26 09:00:34.837  INFO 16684 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='7544c68c-cb45-489b-ba78-2a0c61570240', email='tes3@test.be'}
+2022-10-26 09:00:34.838  INFO 16684 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='a638e483-9f00-4266-a52d-a089c0e25b10', email='tes4@test.be'}
+2022-10-26 09:00:34.946  INFO 16684 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='032fbeec-58b0-440a-85e4-ac56a527b763', email='test@test.be'}
+2022-10-26 09:00:34.947  INFO 16684 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='55e6f785-9317-4fb4-a863-5d02169940da', email='tes2@test.be'}
+2022-10-26 09:00:34.949  INFO 16684 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='120168bc-4b69-495a-bdfb-ec805ac24324', email='tes3@test.be'}
+2022-10-26 09:00:34.950  INFO 16684 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='692af70f-8723-4cd9-a2b8-6e9db0d9a3f1', email='tes4@test.be'}
+2022-10-26 09:00:35.050  INFO 16684 --- [http-nio-auto-1-exec-3] c.s.d.d.e.ControllerExceptionHandler     : GET -> Book loan with ID invalidLoanID could not be found
+2022-10-26 09:00:35.137  INFO 16684 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='f2e9eea5-b550-4721-bf87-f19732f5f163', email='test@test.be'}
+2022-10-26 09:00:35.139  INFO 16684 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='02dd6052-d3eb-4f86-a669-d31a6b348779', email='tes2@test.be'}
+2022-10-26 09:00:35.140  INFO 16684 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='723bca90-49c9-4b3f-a5c0-bfd964319e40', email='tes3@test.be'}
+2022-10-26 09:00:35.142  INFO 16684 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='6b82cffc-0520-48a1-bab7-3d9539623483', email='tes4@test.be'}
+2022-10-26 09:00:35.187  INFO 16684 --- [http-nio-auto-1-exec-4] c.s.d.d.e.ControllerExceptionHandler     : GET -> Member with ID invalidUserID does not exist
+2022-10-26 09:00:35.212  INFO 16684 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='51fb2db4-2b4c-4616-ac5c-933281dd5177', email='test@test.be'}
+2022-10-26 09:00:35.213  INFO 16684 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='d8bc3c21-10e5-4e4d-9d74-2f6a95eda8f3', email='tes2@test.be'}
+2022-10-26 09:00:35.215  INFO 16684 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='85d205f4-d94a-4210-87ff-51b300d47a9e', email='tes3@test.be'}
+2022-10-26 09:00:35.216  INFO 16684 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='8a46787f-7749-4643-8398-1810d60f27cf', email='tes4@test.be'}
+2022-10-26 09:00:35.246  INFO 16684 --- [http-nio-auto-1-exec-5] c.s.d.d.e.ControllerExceptionHandler     : GET -> Book with ISBN invalidISBN was not found
+2022-10-26 09:00:35.271  INFO 16684 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='0e045e05-b062-4823-bafe-bc516b87ea68', email='test@test.be'}
+2022-10-26 09:00:35.272  INFO 16684 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='91892240-56e2-44e3-8e87-9656c82d3333', email='tes2@test.be'}
+2022-10-26 09:00:35.273  INFO 16684 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='1ab79514-d2ff-4764-80a9-6534a8af931e', email='tes3@test.be'}
+2022-10-26 09:00:35.274  INFO 16684 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='51362248-0942-4e58-9668-146831678da5', email='tes4@test.be'}
+2022-10-26 09:00:35.276  INFO 16684 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='fb89915e-aa1d-4bb4-a62b-4dff574566d1', email='tes5@test.be'}
+2022-10-26 09:00:35.321  INFO 16684 --- [http-nio-auto-1-exec-6] c.s.d.d.bookLoans.BookLoanRepository     : POST -> BookLoan{memberID='fb89915e-aa1d-4bb4-a62b-4dff574566d1', bookISBN='isbn4', loanID='b012fa96-4395-4add-88ed-439126f8bcd3'}
+2022-10-26 09:00:35.369  INFO 16684 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='8311ec24-303e-43c3-a898-cc69de80e565', email='test@test.be'}
+2022-10-26 09:00:35.370  INFO 16684 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='5e66a311-c37e-45dd-98c2-a43b1622a141', email='tes2@test.be'}
+2022-10-26 09:00:35.371  INFO 16684 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='afd01731-a74a-4cad-94b8-32281bc3501a', email='tes3@test.be'}
+2022-10-26 09:00:35.373  INFO 16684 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='267fadf9-9c3b-433a-b799-02ed0897070d', email='tes4@test.be'}
+2022-10-26 09:00:35.375  INFO 16684 --- [main] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='6fd387db-e400-40e2-801e-f3918a96db8d', email='tes5@test.be'}
+2022-10-26 09:00:35.376  INFO 16684 --- [main] c.s.d.d.bookLoans.BookLoanRepository     : POST -> BookLoan{memberID='6fd387db-e400-40e2-801e-f3918a96db8d', bookISBN='isbn4', loanID='f0770b1a-e757-4287-be24-398d1e905200'}
+2022-10-26 09:00:35.485  INFO 16684 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.switchfully.digibooky.MemberControllerIntegrationTest], using SpringBootContextLoader
+2022-10-26 09:00:35.488  INFO 16684 --- [main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.switchfully.digibooky.MemberControllerIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-10-26 09:00:35.489  INFO 16684 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.switchfully.digibooky.MemberControllerIntegrationTest]: MemberControllerIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2022-10-26 09:00:35.497  INFO 16684 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.switchfully.digibooky.Application for test class com.switchfully.digibooky.MemberControllerIntegrationTest
+2022-10-26 09:00:35.502  INFO 16684 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-10-26 09:00:35.506  INFO 16684 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1e18876d, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@17e8c38c, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@5c4516ec, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@17ea3bc0, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@4d93e5bf, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1c36ab22, org.springframework.test.context.event.EventPublishingTestExecutionListener@68303c3e, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@2ec23ec3, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@7c2e88b9, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@556843a5, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@3c5044fa, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3db5195, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@b386a17]
+2022-10-26 09:00:35.754  INFO 16684 --- [http-nio-auto-1-exec-8] c.s.d.domain.users.MemberRepository      : POST -> Member{userId='04eb0b95-d8bd-4a84-ba46-669aaa296b8a', email='test@test.test'}
