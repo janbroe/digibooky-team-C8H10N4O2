@@ -14,7 +14,7 @@ public class UserRepository {
 
     public UserRepository() {
         this.memberRepositoryByID = new HashMap<>();
-        User god = new User(null, "god", "password", "god@lib.be", new Address("virtual space"), Role.ADMIN);
+        User god = new User("notNull", "god", "password", "god@lib.be", new Address("virtual space"), Role.ADMIN);
         User librarian1 = new User("inss0", "first0", "password", "test@lib.be", new Address("city0"), Role.LIBRARIAN);
         User user1 = new User("inss1", "first1", "password", "test@test.be", new Address("city1"), Role.MEMBER);
         User user2 = new User("inss2", "first2", "password", "tes2@test.be", new Address("city2"), Role.MEMBER);
