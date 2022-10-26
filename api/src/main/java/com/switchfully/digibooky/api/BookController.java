@@ -7,6 +7,7 @@ import com.switchfully.digibooky.service.bookLoan.dto.BookLoanInDTO;
 import com.switchfully.digibooky.service.bookLoan.dto.BookLoanOutDTO;
 import com.switchfully.digibooky.service.books.BookService;
 import com.switchfully.digibooky.service.books.dto.BookDTO;
+import com.switchfully.digibooky.service.books.dto.CreateBookDTO;
 import com.switchfully.digibooky.service.security.SecurityService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -58,6 +59,14 @@ public class BookController {
         securityService.validateAuthorization(authorization, Feature.RETURN_BOOK);
         log.debug("POST -> Controller request to post book return with lendingID ".concat(loanID));
         return bookLoanService.returnBook(loanID);
+    }
+
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.CREATED)
+    public BookDTO addNewBookToLibrary(@RequestHeader String authorization, @RequestBody CreateBookDTO createBookDTO) {
+        securityService.validateAuthorization(authorization, Feature.CREATE_BOOK);
+        return bookService.createBook(createBookDTO);
+
     }
 
 }
