@@ -2,34 +2,34 @@ package com.switchfully.digibooky.service.users.dto;
 
 import com.switchfully.digibooky.domain.users.Address;
 
-public class MemberDTO {
+public class UserDTO {
     private String userId;
     private String firstname;
     private String lastname;
     private String email;
     private Address address;
 
-    public MemberDTO setUserId(String userId) {
+    public UserDTO setUserId(String userId) {
         this.userId = userId;
         return this;
     }
 
-    public MemberDTO setFirstname(String firstname) {
+    public UserDTO setFirstname(String firstname) {
         this.firstname = firstname;
         return this;
     }
 
-    public MemberDTO setLastname(String lastname) {
+    public UserDTO setLastname(String lastname) {
         this.lastname = lastname;
         return this;
     }
 
-    public MemberDTO setEmail(String email) {
+    public UserDTO setEmail(String email) {
         this.email = email;
         return this;
     }
 
-    public MemberDTO setAddress(Address address) {
+    public UserDTO setAddress(Address address) {
         this.address = address;
         return this;
     }

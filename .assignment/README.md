@@ -123,10 +123,10 @@ I should be able to enter wildcards if I don't know the complete name of the aut
 only the first name, only the last name or both.
 - Prioritization: Must-Have
 
-### Story 6A: Register as member
-As a user I want to be able to register myself as a new Digibooky member, so I can perform additional actions. 
-This member should have a unique INSS (social security number), last name, first name, email, street name, street number, postal code and city. 
-- A member should contain a unique user identification number (create/choose your own, don't use INSS)
+### Story 6A: Register as user
+As a user I want to be able to register myself as a new Digibooky user, so I can perform additional actions. 
+This user should have a unique INSS (social security number), last name, first name, email, street name, street number, postal code and city. 
+- A user should contain a unique user identification number (create/choose your own, don't use INSS)
 - The INSS should be filled in and unique.
 - The email should be filled in and unique. 
     - Also validate that the email is of the form `x@x.x`, where x can be any type and amount of letters and numbers.
@@ -149,7 +149,7 @@ Instead of doing the email validation yourself, rely on the external mail valida
 As an Admin user I want to view all members within the system, so I can keep track of all the members.
 - An Admin user contains a unique user identification number, last name, first name and email.
 - One Admin user should exist on startup.
-- If any other user tries to view all member within the system, the server should respond with 403 Forbidden and a custom message.
+- If any other user tries to view all user within the system, the server should respond with 403 Forbidden and a custom message.
     - Hint: provide the unique user identification number as a means of authentication and use it to validate authorization.
 - The INSS should be excluded from the members when returned (sensitive information)
 - Prioritization: Must-Have
@@ -185,20 +185,20 @@ As a Librarian I want to delete an existing book, so I can restrict members from
 - Prioritization: Must-Have
 
 ### Story 11: Lending a book
-As a member I want to be able to borrow a book, so that I can allocate a book to myself for a certain duration. 
-- The member's user identification number and the book's ISBN should be provided.
+As a user I want to be able to borrow a book, so that I can allocate a book to myself for a certain duration. 
+- The user's user identification number and the book's ISBN should be provided.
 - A unique lending identification number and a due date should be registered, by default this date is `TODAY + 3 WEEKS`
 - A book can only be lent once at a time.
 - Prioritization: Must-Have
 
 ### Story 12: Return a book
-As a member I can return a book. If the book return is late, show a corresponding message.
+As a user I can return a book. If the book return is late, show a corresponding message.
 - The unique lending identification number should be provided
 - If the book return is late, show a corresponding message.
 - Prioritization: Must-Have
 
 ### Story 13: Lent books
-As a Librarian I want to see all the books lent to a member, so I can keep track of how many books a member borrowed.
+As a Librarian I want to see all the books lent to a user, so I can keep track of how many books a user borrowed.
 - Prioritization: Must-Have
 
 ### Story 14: Overdue books
@@ -206,7 +206,7 @@ As a Librarian I want to see all the books that are overdue, so I can keep track
 - Prioritization: Must-Have
 
 ### Story 15: Enhance book details
-As a member I want to be able to see if a book is borrowed, and if so by whom, in the details of a book, 
+As a user I want to be able to see if a book is borrowed, and if so by whom, in the details of a book, 
 - Expand the result returned when requesting the details of a book (Story 2)
 - Prioritization: Must-Have
 
@@ -217,7 +217,7 @@ an incorrect ISBN.
 - Prioritization: Nice-To-Have
 
 ### Story 17: Overdue Fines
-As a Librarian I want to create a fine when a member returns a book that is overdue, so I can penalize this behavior.
+As a Librarian I want to create a fine when a user returns a book that is overdue, so I can penalize this behavior.
 - The maximum loan period is 3 weeks
 - The formula to calculate the fine is: `€5 + €2 * FULL_WEEKS_OVERDUE`
     - E.g.
@@ -227,12 +227,12 @@ As a Librarian I want to create a fine when a member returns a book that is over
 - Prioritization: Nice-To-Have
 
 ### Story 18: Enhance members overview with fines
-As an Admin I want to see an extra field containing the total amount of fines a member has, when viewing the members.
+As an Admin I want to see an extra field containing the total amount of fines a user has, when viewing the members.
 - Enhances Story 7 (View members as Admin)
 - Prioritization: Nice-To-Have
 
 ### Story 19: Damage Fines
-As a Librarian I want to create a fine when a member returns a damaged book, so I can penalize this behavior.
+As a Librarian I want to create a fine when a user returns a damaged book, so I can penalize this behavior.
 - The formula to calculate the fine is: `(INITIAL_PRICE) * (1 - ((AGE_OF_BOOK_IN_YEARS) * 0.2)` with a minimum of €4.
 - Make sure these fines are included in Story 18.
 - Prioritization: Nice-To-Have
@@ -257,16 +257,16 @@ It handles the financial administration of Digibooky, i.e. it allows for the gen
 This is an optional application, make sure Digibooky is working properly before starting with DigibookyFin.
 
 ### Story 1: 
-As an accountant I want to generate an invoice for a certain member so that I can add this invoice as an attachment to an email.
-- The unique user identification number should be provided to identify the member
-- The invoice should contain the complete information about the member (full name + address) and all its unpaid fines.
-    - This member and fine information should be requested (Digibooky contains this information)
-    - DigibookyFin should not store any member or fine information (besides their unique identification numbers)
-- The first invoice of a member always contains the subscription fee of €15.
+As an accountant I want to generate an invoice for a certain user so that I can add this invoice as an attachment to an email.
+- The unique user identification number should be provided to identify the user
+- The invoice should contain the complete information about the user (full name + address) and all its unpaid fines.
+    - This user and fine information should be requested (Digibooky contains this information)
+    - DigibookyFin should not store any user or fine information (besides their unique identification numbers)
+- The first invoice of a user always contains the subscription fee of €15.
 
 ### Story 2:
-As an accountant I want to get an overview of the invoices generated for a member.
-- The overview should show the unique invoice number, the full name of the member and the total amount of the invoice for each invoice.
+As an accountant I want to get an overview of the invoices generated for a user.
+- The overview should show the unique invoice number, the full name of the user and the total amount of the invoice for each invoice.
 
 ### Story 3:
 As an accountant I want to mark an invoice as paid, so I can keep track of which invoices are paid.

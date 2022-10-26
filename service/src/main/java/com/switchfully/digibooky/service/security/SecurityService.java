@@ -3,8 +3,8 @@ package com.switchfully.digibooky.service.security;
 import com.switchfully.digibooky.domain.exceptions.UnauthorizedException;
 import com.switchfully.digibooky.domain.exceptions.WrongPasswordException;
 import com.switchfully.digibooky.domain.users.Feature;
-import com.switchfully.digibooky.domain.users.Member;
-import com.switchfully.digibooky.domain.users.MemberRepository;
+import com.switchfully.digibooky.domain.users.User;
+import com.switchfully.digibooky.domain.users.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -15,24 +15,24 @@ import java.util.NoSuchElementException;
 @Service
 public class SecurityService {
     private final Logger log = LoggerFactory.getLogger(SecurityService.class);
-    private final MemberRepository memberRepository;
+    private final UserRepository userRepository;
 
-    public SecurityService(MemberRepository memberRepository) {
-        this.memberRepository = memberRepository;
+    public SecurityService(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     public void validateAuthorization(String authorization, Feature feature) {
         UsernamePassword usernamePassword = getUsernamePassword(authorization);
-        Member member = memberRepository.getMemberByEmail(usernamePassword.getUsername());
-        if (member == null) {
+        User user = userRepository.getMemberByEmail(usernamePassword.getUsername());
+        if (user == null) {
             log.error("Unknown user" + usernamePassword.getUsername());
             throw new NoSuchElementException("Username does not exist");
         }
-        if (!member.doesPasswordMatch(usernamePassword.getPassword())) {
+        if (!user.doesPasswordMatch(usernamePassword.getPassword())) {
             log.error("Password does not match for user " + usernamePassword.getUsername());
             throw new WrongPasswordException();
         }
-        if (!member.canHaveAccessTo(feature)) {
+        if (!user.canHaveAccessTo(feature)) {
             log.error("User " + usernamePassword.getUsername() + " does not have access to " + feature);
             throw new UnauthorizedException();
         }

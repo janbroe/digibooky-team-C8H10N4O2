@@ -4,8 +4,9 @@ import com.switchfully.digibooky.domain.books.Author;
 import com.switchfully.digibooky.domain.books.Book;
 import com.switchfully.digibooky.domain.books.BookRepository;
 import com.switchfully.digibooky.domain.users.Address;
-import com.switchfully.digibooky.domain.users.Member;
-import com.switchfully.digibooky.domain.users.MemberRepository;
+import com.switchfully.digibooky.domain.users.Role;
+import com.switchfully.digibooky.domain.users.User;
+import com.switchfully.digibooky.domain.users.UserRepository;
 import org.junit.jupiter.api.Test;
 
 import java.util.NoSuchElementException;
@@ -24,16 +25,16 @@ class BookLoanRepositoryTest {
         Book lendBook = new Book("isbn6", "title6", new Author("first6", "last6"));
         bookRepository.saveBook(lendBook);
 
-        MemberRepository memberRepository = new MemberRepository();
-        Member lendMember = new Member("inss6", "first6", "password", "tes6@test.be", new Address("city6"));
-        memberRepository.saveMember(lendMember);
+        UserRepository userRepository = new UserRepository();
+        User lendUser = new User("inss6", "first6", "password", "tes6@test.be", new Address("city6"), Role.MEMBER);
+        userRepository.saveMember(lendUser);
 
-        BookLoanRepository bookLoanRepository = new BookLoanRepository(bookRepository, memberRepository);
+        BookLoanRepository bookLoanRepository = new BookLoanRepository(bookRepository, userRepository);
 
         //Only thing that can be tested now since we can't get a list of all the lend books yet.
         assertThat(bookRepository.getBookByISBN(lendBook.getIsbn()).isAvailable()).isTrue();
 
-        bookLoanRepository.lendOutBook(new BookLoanOut(lendMember.getUserId(), lendBook.getIsbn()));
+        bookLoanRepository.lendOutBook(new BookLoanOut(lendUser.getUserId(), lendBook.getIsbn()));
 
         assertThat(bookRepository.getBookByISBN(lendBook.getIsbn()).isAvailable()).isFalse();
     }
@@ -45,9 +46,9 @@ class BookLoanRepositoryTest {
         Book lendBook = new Book("isbn6", "title6", new Author("first6", "last6"));
         bookRepository.saveBook(lendBook);
 
-        MemberRepository memberRepository = new MemberRepository();
+        UserRepository userRepository = new UserRepository();
 
-        BookLoanRepository bookLoanRepository = new BookLoanRepository(bookRepository, memberRepository);
+        BookLoanRepository bookLoanRepository = new BookLoanRepository(bookRepository, userRepository);
 
         BookLoanOut givenBookLoan = new BookLoanOut("WrongMemberID", lendBook.getIsbn());
 
@@ -64,13 +65,13 @@ class BookLoanRepositoryTest {
         Book lendBook = new Book("isbn6", "title6", new Author("first6", "last6"));
         bookRepository.saveBook(lendBook);
 
-        MemberRepository memberRepository = new MemberRepository();
-        Member lendMember = new Member("inss6", "first6", "password", "tes6@test.be", new Address("city6"));
-        memberRepository.saveMember(lendMember);
+        UserRepository userRepository = new UserRepository();
+        User lendUser = new User("inss6", "first6", "password", "tes6@test.be", new Address("city6"), Role.MEMBER);
+        userRepository.saveMember(lendUser);
 
-        BookLoanRepository bookLoanRepository = new BookLoanRepository(bookRepository, memberRepository);
+        BookLoanRepository bookLoanRepository = new BookLoanRepository(bookRepository, userRepository);
 
-        BookLoanOut givenBookLoan = new BookLoanOut(lendMember.getUserId(), lendBook.getIsbn());
+        BookLoanOut givenBookLoan = new BookLoanOut(lendUser.getUserId(), lendBook.getIsbn());
 
         //lend book so that it is not available anymore
         bookLoanRepository.lendOutBook(givenBookLoan);
@@ -87,13 +88,13 @@ class BookLoanRepositoryTest {
         Book lendBook = new Book("isbn6", "title6", new Author("first6", "last6"));
         bookRepository.saveBook(lendBook);
 
-        MemberRepository memberRepository = new MemberRepository();
-        Member lendMember = new Member("inss6", "first6", "password", "tes6@test.be", new Address("city6"));
-        memberRepository.saveMember(lendMember);
+        UserRepository userRepository = new UserRepository();
+        User lendUser = new User("inss6", "first6", "password", "tes6@test.be", new Address("city6"), Role.MEMBER);
+        userRepository.saveMember(lendUser);
 
-        BookLoanRepository bookLoanRepository = new BookLoanRepository(bookRepository, memberRepository);
+        BookLoanRepository bookLoanRepository = new BookLoanRepository(bookRepository, userRepository);
 
-        BookLoanOut givenBookLoanOut = new BookLoanOut(lendMember.getUserId(), lendBook.getIsbn());
+        BookLoanOut givenBookLoanOut = new BookLoanOut(lendUser.getUserId(), lendBook.getIsbn());
         BookLoanIn givenBookLoanIn = new BookLoanIn(givenBookLoanOut.getMemberID(), givenBookLoanOut.getBookISBN());
 
         bookLoanRepository.lendOutBook(givenBookLoanOut);
@@ -112,9 +113,9 @@ class BookLoanRepositoryTest {
         //given
         BookRepository bookRepository = new BookRepository();
 
-        MemberRepository memberRepository = new MemberRepository();
+        UserRepository userRepository = new UserRepository();
 
-        BookLoanRepository bookLoanRepository = new BookLoanRepository(bookRepository, memberRepository);
+        BookLoanRepository bookLoanRepository = new BookLoanRepository(bookRepository, userRepository);
 
 
         assertThatThrownBy(() -> bookLoanRepository.getBookLoanOutByLoanID("NonExistingLendingID"))

@@ -1,17 +1,13 @@
 package com.switchfully.digibooky;
 
 import com.switchfully.digibooky.domain.users.Address;
-import com.switchfully.digibooky.domain.users.Member;
-import com.switchfully.digibooky.domain.users.MemberRepository;
-import com.switchfully.digibooky.service.books.dto.BookDTO;
-import io.restassured.RestAssured;
+import com.switchfully.digibooky.domain.users.Role;
+import com.switchfully.digibooky.domain.users.User;
+import com.switchfully.digibooky.domain.users.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
-import org.springframework.http.HttpStatus;
-import org.springframework.test.context.ContextConfiguration;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -22,13 +18,13 @@ public class SecurityControllerIntegrationTest {
     private int port;
     private static final String URI = "http://localhost";
     @Autowired
-    MemberRepository memberRepository;
-    private final Member member = new Member("testINSS", "testLast", "password", "user@test.be", new Address("city"));
+    UserRepository userRepository;
+    private final User user = new User("testINSS", "testLast", "password", "user@test.be", new Address("city"), Role.MEMBER);
 
     @BeforeEach
     void clearRepositoryAndAddMember() {
-        memberRepository.getAll().clear();
-        memberRepository.saveMember(member);
+        userRepository.getAll().clear();
+        userRepository.saveMember(user);
     }
 
 //    @Test

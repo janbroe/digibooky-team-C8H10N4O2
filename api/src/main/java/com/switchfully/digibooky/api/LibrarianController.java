@@ -9,25 +9,22 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+
 @RestController
-@RequestMapping(value = "/members")
+@RequestMapping(value = "/librarians")
 @CrossOrigin
-public class MemberController {
-
+public class LibrarianController {
     private final Logger log = LoggerFactory.getLogger(MemberController.class);
-
     private final UserService userService;
 
-    public MemberController(UserService userService) {
+    public LibrarianController(UserService userService) {
         this.userService = userService;
     }
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
     public UserDTO SaveMember(@RequestBody CreateUserDTO createUserDTO) {
-        log.debug("POST -> Controller post a new member");
-        return userService.saveMember(createUserDTO);
+        log.debug("POST -> Controller post a new librarian");
+        return userService.registerLibrarian(createUserDTO);
     }
-
-
 }

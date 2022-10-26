@@ -6,28 +6,23 @@ import com.switchfully.digibooky.domain.books.Author;
 import com.switchfully.digibooky.domain.books.Book;
 import com.switchfully.digibooky.domain.books.BookRepository;
 import com.switchfully.digibooky.domain.users.Address;
-import com.switchfully.digibooky.domain.users.Member;
-import com.switchfully.digibooky.domain.users.MemberRepository;
-import com.switchfully.digibooky.service.bookLoan.BookLoanMapper;
+import com.switchfully.digibooky.domain.users.Role;
+import com.switchfully.digibooky.domain.users.User;
+import com.switchfully.digibooky.domain.users.UserRepository;
 import com.switchfully.digibooky.service.bookLoan.dto.BookLoanInDTO;
 import com.switchfully.digibooky.service.bookLoan.dto.BookLoanOutDTO;
 import com.switchfully.digibooky.service.books.BookMapper;
 import com.switchfully.digibooky.service.books.dto.BookDTO;
 import io.restassured.RestAssured;
-import org.apache.tomcat.util.http.fileupload.servlet.ServletRequestContext;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.web.util.ContentCachingResponseWrapper;
 
-import javax.servlet.http.HttpServletResponse;
 import java.time.LocalDate;
 import java.util.List;
-import java.util.NoSuchElementException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -47,7 +42,7 @@ public class BookControllerIntegrationTest {
     private BookRepository bookRepository;
 
     @Autowired
-    private MemberRepository memberRepository;
+    private UserRepository userRepository;
 
     @Autowired
     BookLoanRepository bookLoanRepository;
@@ -63,11 +58,11 @@ public class BookControllerIntegrationTest {
 
     @BeforeEach
     void createAndFillMemberRepository() {
-        memberRepository.getAll().clear();
-        memberRepository.saveMember(new Member("inss1", "first1", "password", "test@test.be", new Address("city1")));
-        memberRepository.saveMember(new Member("inss2", "first2", "password", "tes2@test.be", new Address("city2")));
-        memberRepository.saveMember(new Member("inss3", "first3", "password", "tes3@test.be", new Address("city3")));
-        memberRepository.saveMember(new Member("inss4", "first4", "password", "tes4@test.be", new Address("city4")));
+        userRepository.getAll().clear();
+        userRepository.saveMember(new User("inss1", "first1", "password", "test@test.be", new Address("city1"), Role.MEMBER));
+        userRepository.saveMember(new User("inss2", "first2", "password", "tes2@test.be", new Address("city2"), Role.MEMBER));
+        userRepository.saveMember(new User("inss3", "first3", "password", "tes3@test.be", new Address("city3"), Role.MEMBER));
+        userRepository.saveMember(new User("inss4", "first4", "password", "tes4@test.be", new Address("city4"), Role.MEMBER));
     }
 
     @Test
@@ -120,8 +115,8 @@ public class BookControllerIntegrationTest {
 
     @Test
     void givenValidMember_createBookLoan_returnBookLoanOutDTO() {
-        Member givenMember = new Member("inss5", "first5", "password", "tes5@test.be", new Address("city5"));
-        memberRepository.saveMember(givenMember);
+        User givenUser = new User("inss5", "first5", "password", "tes5@test.be", new Address("city5"), Role.MEMBER);
+        userRepository.saveMember(givenUser);
 
         Book givenBook = bookRepository.getBookByISBN("isbn4");
 
@@ -130,7 +125,7 @@ public class BookControllerIntegrationTest {
                 .baseUri("http://localhost")
                 .port(port)
                 .when()
-                .post("/books/" + givenMember.getUserId() + "/" + givenBook.getIsbn() + "/lend")
+                .post("/books/" + givenUser.getUserId() + "/" + givenBook.getIsbn() + "/lend")
                 .then()
                 .assertThat()
                 .statusCode(HttpStatus.CREATED.value())
@@ -139,7 +134,7 @@ public class BookControllerIntegrationTest {
 
         assertThat(result).isNotNull();
         assertThat(result.getLoanID()).isNotNull();
-        assertThat(result.getMemberID()).isEqualTo(givenMember.getUserId());
+        assertThat(result.getMemberID()).isEqualTo(givenUser.getUserId());
         assertThat(result.getBookISBN()).isEqualTo(givenBook.getIsbn());
         assertThat(result.getLoanDate()).isEqualTo(LocalDate.now());
         assertThat(result.getDueDate()).isEqualTo(LocalDate.now().plusDays(21));
@@ -148,12 +143,12 @@ public class BookControllerIntegrationTest {
 
     @Test
     void givenValidBookLoanID_whenReturningBook_returnBookLoanInDTO() {
-        Member givenMember = new Member("inss5", "first5", "password", "tes5@test.be", new Address("city5"));
-        memberRepository.saveMember(givenMember);
+        User givenUser = new User("inss5", "first5", "password", "tes5@test.be", new Address("city5"), Role.MEMBER);
+        userRepository.saveMember(givenUser);
 
         Book givenBook = bookRepository.getBookByISBN("isbn4");
 
-        BookLoanOut bookLoanOut = new BookLoanOut(givenMember.getUserId(), givenBook.getIsbn());
+        BookLoanOut bookLoanOut = new BookLoanOut(givenUser.getUserId(), givenBook.getIsbn());
         bookLoanRepository.lendOutBook(bookLoanOut);
 
         BookLoanInDTO result = RestAssured
@@ -170,7 +165,7 @@ public class BookControllerIntegrationTest {
 
         assertThat(result).isNotNull();
         assertThat(result.getLoanID()).isNotNull();
-        assertThat(result.getMemberID()).isEqualTo(givenMember.getUserId());
+        assertThat(result.getMemberID()).isEqualTo(givenUser.getUserId());
         assertThat(result.getBookISBN()).isEqualTo(givenBook.getIsbn());
         assertThat(result.getReturnDate()).isEqualTo(LocalDate.now());
         assertThat(result.getMessage()).isEqualTo("Thank you for being a responsible adult");

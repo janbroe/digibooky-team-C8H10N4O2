@@ -1,10 +1,10 @@
 package com.switchfully.digibooky;
 
 import com.switchfully.digibooky.domain.users.Address;
-import com.switchfully.digibooky.domain.users.MemberRepository;
-import com.switchfully.digibooky.service.users.MemberMapper;
-import com.switchfully.digibooky.service.users.dto.CreateMemberDTO;
-import com.switchfully.digibooky.service.users.dto.MemberDTO;
+import com.switchfully.digibooky.domain.users.UserRepository;
+import com.switchfully.digibooky.service.users.UserMapper;
+import com.switchfully.digibooky.service.users.dto.CreateUserDTO;
+import com.switchfully.digibooky.service.users.dto.UserDTO;
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,25 +12,24 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.ContextConfiguration;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 //@ContextConfiguration(classes = MemberControllerIntegrationTest.class)
-class MemberControllerIntegrationTest {
+class UserControllerIntegrationTest {
 
     @LocalServerPort
     private int port;
 
-    private final MemberMapper memberMapper = new MemberMapper();
+    private final UserMapper userMapper = new UserMapper();
 
     @Autowired
-    private MemberRepository memberRepository;
+    private UserRepository userRepository;
 
     @Test
     void createAMember() {
-        CreateMemberDTO given = new CreateMemberDTO()
+        CreateUserDTO given = new CreateUserDTO()
                 .setInss("testInss")
                 .setFirstname("testFirstName")
                 .setLastname("testLastName")
@@ -38,7 +37,7 @@ class MemberControllerIntegrationTest {
                 .setEmail("test@test.test")
                 .setAddress(new Address("testCity"));
 
-        MemberDTO result = RestAssured
+        UserDTO result = RestAssured
                 .given()
                 .body(given)
                 .accept(MediaType.APPLICATION_JSON_VALUE)
@@ -51,7 +50,7 @@ class MemberControllerIntegrationTest {
                 .assertThat()
                 .statusCode(HttpStatus.CREATED.value())
                 .extract()
-                .as(MemberDTO.class);
+                .as(UserDTO.class);
 
         assertThat(result).isNotNull();
         assertThat(result.getFirstname()).isEqualTo(given.getFirstname());

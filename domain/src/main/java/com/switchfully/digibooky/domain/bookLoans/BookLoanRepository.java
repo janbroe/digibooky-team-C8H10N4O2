@@ -2,13 +2,12 @@ package com.switchfully.digibooky.domain.bookLoans;
 
 
 import com.switchfully.digibooky.domain.books.BookRepository;
-import com.switchfully.digibooky.domain.users.MemberRepository;
+import com.switchfully.digibooky.domain.users.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.NoSuchElementException;
@@ -20,18 +19,18 @@ public class BookLoanRepository {
     @Autowired
     private final BookRepository bookRepository;
     @Autowired
-    private final MemberRepository memberRepository;
+    private final UserRepository userRepository;
 
     private final Map<String, BookLoan> bookLoansByID;
 
-    public BookLoanRepository(BookRepository bookRepository, MemberRepository memberRepository) {
+    public BookLoanRepository(BookRepository bookRepository, UserRepository userRepository) {
         this.bookLoansByID = new HashMap<>();
         this.bookRepository = bookRepository;
-        this.memberRepository = memberRepository;
+        this.userRepository = userRepository;
     }
 
     public void lendOutBook(BookLoanOut bookLoanOut) {
-        if (!memberRepository.doesMemberExist(bookLoanOut.getMemberID())) {
+        if (!userRepository.doesMemberExist(bookLoanOut.getMemberID())) {
             throw new NoSuchElementException("Member with ID ".concat(bookLoanOut.getMemberID()).concat(" does not exist"));
         }
         if (!isBookAvailable(bookLoanOut.getBookISBN())) {
